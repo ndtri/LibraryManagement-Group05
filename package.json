@@ -1,0 +1,26 @@
+{
+  "name": "ptudw-17clc-group05",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ttbhanh/PTUDW-17CLC-Group05.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ttbhanh/PTUDW-17CLC-Group05/issues"
+  },
+  "homepage": "https://github.com/ttbhanh/PTUDW-17CLC-Group05#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}

@@ -1,0 +1,143 @@
+.header_font {
+    font-family: "Calistoga";
+}
+
+p {
+    font-family: "Asap";
+}
+
+.container-fluid {
+    padding: 20px 50px !important;
+}
+
+.header {
+    margin-right: 70px;
+}
+
+.logo_img {
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.header_btn {
+    margin-top: 30px !important;
+    margin-right: 10px;
+}
+
+.nav {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: black !important;
+    padding: 5px 20px !important;
+}
+
+.search_btn {
+    float: right;
+}
+
+.search-bar {
+    margin-top: 50px;
+}
+
+.big-search-box {
+    width: 1050px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid red;
+    margin-left: 150px !important;
+}
+
+.search-textbox {
+    border: none;
+    border-color: transparent;
+    height: 34px;
+    width: 990px;
+    margin-left: 10px;
+}
+
+.search-textbox:focus {
+    outline-width: 0;
+}
+
+.search-header {
+    margin-left: 200px;
+    font-weight: bolder;
+}
+
+.search-text-container {
+    margin-top: 15px;
+    margin-right: 250px;
+}
+
+.adv-big-search-text {
+    font-size: 18px;
+}
+
+.filter-icon {
+    max-width: 22px;
+    max-height: 22px;
+}
+
+.collapse {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.search-option-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: lightgrey;
+  }
+
+.option-checkbox-items {
+      margin: 20px 0;
+  }
+
+.textbox-header {
+    font-family: "Merriweather";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-control {
+    width: 250px !important;
+}
+
+.search-item-container {
+    margin-left: 120px;
+    margin-top: 60px;
+}
+
+.header_book {
+    margin-bottom: 20px;
+}
+
+.author_name {
+    font-family: "Merriweather";
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.img_book {
+    max-width: 120px;
+    max-height: 200px;
+    margin-right: 20px;
+}
+
+.read_more {
+    margin-top: 15px;
+}
+
+.book_item {
+    margin-bottom: 30px;
+    width: 400px;
+}

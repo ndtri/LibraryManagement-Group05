@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Support</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./Support-style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calistoga" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid">
+    <div class="header">
+        <div class="header_logo">
+            <div class="row">
+                <div class="col">
+                    <div class="d-flex flex-row">
+                        <a href="./index-guest.html">
+                            <img class="logo_img" src="./images/logo-khtn-full.png" alt="logo">
+                        </a>
+                        <!-- <div class="d-flex flex-column">
+                                    <h5 class="header_font">TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</h5>
+                                    <p class="logo_title">Lorem ipsum dolor sit amet consectetur, adipisicing elit.Eos, ipsum porro quas
+                                    </p>
+                                </div> -->
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="d-flex flex-row d-flex justify-content-center">
+                        <button type="button" class="btn btn-primary header_btn" data-toggle="modal" data-target="#loginModal">Đăng nhập</button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLable" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModal">Đăng nhập</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="was-validated">
+                                      <div class="form-group">
+                                        <label for="uname">Username:</label>
+                                        <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="pwd">Password:</label>
+                                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                      </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="loginBtn" type="button" class="btn btn-primary">Đăng nhập</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <button type="button" class="btn btn-primary header_btn" data-toggle="modal" data-target="#signupModal">Đăng kí</button>
+                            <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupLable" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModal">Đăng Kí</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form class="was-validated">
+                                      <div class="form-group">
+                                        <label for="uname">Username:</label>
+                                        <input type="text" class="form-control" id="uname-su" placeholder="Enter username" name="uname-su" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                        <small id="unameHelp" class="form-text text-muted">Username can contain any letters or numbers, without spaces</small>
+                                      </div> 
+
+                                      <div class="form-group">
+                                        <label for="uname">Email:</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="pwd">Password:</label>
+                                        <input type="password" class="form-control" id="pwd-su" placeholder="Enter password" name="pswd-su" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                        <small id="pwdHelp" class="form-text text-muted">Password should be at least 4 characters</small>
+                                      </div>
+
+                                      <div class="form-group">
+                                        <label for="pwd">Password (Confirm):</label>
+                                        <input type="password" class="form-control" id="pwdcf" placeholder="Confirm password" name="pswdcf" required>
+                                        <div class="valid-feedback">Valid.</div>
+                                        <div class="invalid-feedback">Please fill out this field.</div>
+                                        <small id="pwdHelp" class="form-text text-muted">Confirm password</small>
+                                      </div>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="signupBtn" type="button" class="btn btn-primary">Đăng kí</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav_search row">
+            <div class="col d-flex align-items-baseline">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="nav collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav nav-pills">
+                            <li class="nav-item">
+                                <a class="nav-link" href="./index-guest.html">Trang chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./search-guest.html">Tìm kiếm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./Intro-guest.html">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Hỗ trợ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./News-guest.html">Tin tức</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-3 d-flex justify-content-center">
+                <div class="d-flex flex-column">
+                    <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                      <div class="row search_box">
+                          <input class="search-textbox d-flex align-self-center" type="text"></input>
+                          <button class="btn btn-link search_btn" type="submit">
+                            <img src="./images/search_button.png" alt="search_button">
+                          </button>
+                      </div>
+                    </form>
+                    <a href="./search-guest.html?collapseTrigger" class="d-flex justify-content-center">Tìm kiếm nâng cao</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+        <div class="row">
+            <div class="col">
+                <h5 class="header_font">Ý KIẾN ĐÓNG GÓP</h5>
+                <div class="area">
+                    <p class="text">Họ và tên: </p>
+                    <textarea class="inputarea"></textarea>
+                </div>
+                <div class="area">
+                    <p class="text">Email: </p>
+                    <textarea class="inputarea"></textarea>
+                </div>
+                <div class="area">
+                    <p class="text">Đóng góp của bạn: </p>
+                    <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>
+                    <button type="button" class="btn btn-primary header_btn send-comment">Gửi đóng góp</button>
+                    <div class="row comment">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 news_container">
+                <h3 class="header_font header_news">Thông báo</h3>
+                <div class="d-flex flex-column news_border">
+                    <div class="news">
+                        <h5 class="header_font">Tên tin tức</h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="read_more" href="#">Xem thêm</a>
+                        <hr>
+                    </div>
+                    <div class="news">
+                        <h5 class="header_font">Tên tin tức</h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="read_more" href="#">Xem thêm</a>
+                        <hr>
+                    </div>
+                    <div class="news">
+                        <h5 class="header_font">Tên tin tức</h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <a class="read_more" href="#">Xem thêm</a>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_container d-flex flex-row justify-content-end">
+        <div class="footer_item1 d-flex align-items-center">
+            <p>Contact us</p>
+        </div>
+        <div class="footer_item2">
+            <p>(+84) 23124124</p>
+            <p>example@gmail.com</p>
+            <p>123 Street, Ho Chi Minh City</p>
+        </div>
+        <div class="footer_item3 d-flex flex-row align-items-center">
+            <img src="./images/facebook_circle-512.png" alt="facebook">
+            <img src="./images/twitter_circle_color-512.png" alt="twitter">
+        </div>
+    </div>
+</body>
+
+<!-- Optional JavaScript -->
+<script>
+    $(document).ready(function() {
+      $("#loginBtn").click(function() {
+        var username = $("#uname").val();
+        var password = $("#pwd").val();
+
+        if (username == "user" && password == "user") {
+          window.location.href = "./Support-user.html";
+        } else {
+          alert("Wrong username or password. Please try again.");
+        }
+      });  
+    });
+  </script>
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</html>
