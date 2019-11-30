@@ -48,8 +48,13 @@ p {
 }
 
 .header_btn {
-	margin-top: 30px !important;
-	margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#signoutBtn, .profile-btn {
+    max-width: 50%;
+    margin-left: 5rem;
 }
 
 .nav {
