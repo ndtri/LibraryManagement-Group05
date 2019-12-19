@@ -14,7 +14,7 @@ let hbs = expressHbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
-app.get('/', ( req, res)=> {
+app.get('/', (req, res)=> {
     res.render('index');
 })
 
@@ -33,6 +33,14 @@ app.get('/search', (req, res) => {
 app.get('/support', (req, res) => {
     res.render('support');
 })
+
+app.get('/sync', (req, res) => {
+    let models = require('./models');
+    models.sequelize.sync()
+    .then(() => {
+        res.send('database sync completed!')
+    });
+});
     
 app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
