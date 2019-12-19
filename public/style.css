@@ -1,0 +1,353 @@
+.cmtheader {
+	margin-top: 100px;
+}
+
+.comment {
+	margin-top: 20px;
+	width: 850px;
+}
+
+.avatar {
+	align-content: center;
+	height: 60px;
+	width: 60px;
+}
+
+#thich {
+	float: left;
+}
+
+#phanhoi {
+	margin-left: 20px;
+	float: left;
+}
+
+.bookinfo {
+	width: 800px;
+}
+
+.Details {
+	width: 800px;
+	margin: 20px 0px;
+}
+
+.header_font {
+	font-family: "Calistoga";
+}
+
+p {
+	font-family: "Asap";
+}
+
+.container-fluid {
+	padding: 20px 50px !important;
+}
+
+.logo_img {
+	border-radius: 5px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+.header_btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#signoutBtn, .profile-btn {
+    max-width: 50%;
+    margin-left: 5rem;
+}
+
+.nav {
+	border: 0.5px solid gray;
+	border-radius: 5px;
+}
+
+.nav-link {
+	color: black !important;
+	padding: 5px 20px !important;
+}
+
+.search_box {
+	width: 250px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid red;
+	font-size: 18px;
+}
+
+.search_btn {
+	float: right;
+}
+
+.news {
+	padding: 10px;
+}
+
+.news_container {
+	margin-right: 20px;
+}
+
+.news_border {
+	border: 1.5px solid black;
+	border-radius: 10px;
+}
+
+.header_news {
+	margin-bottom: 20px;
+}
+
+.read_more {
+	margin-top: 15px;
+}
+
+.footer_item1 {
+	margin-right: 20px;
+}
+
+.footer_item1 p {
+	font-family: "Asap";
+	font-weight: bold;
+}
+
+.footer_item2 {
+	margin-right: 100px;
+}
+
+.footer_item3 {
+	margin-right: 30px;
+}
+
+.footer_item3 img {
+	max-width: 35px;
+	max-height: 35px;
+}
+
+.footer_item3 img:first-child {
+	margin: 0 20px;
+}
+
+.footer_container {
+	background-color: bisque;
+	padding: 10px 0;
+	margin-top: 40px;
+}
+
+.send-comment {
+	margin-top: 5px !important;
+}
+
+.loadcomment {
+	width: 400px;
+	height: 60px;
+}
+
+.borrow {
+	position: absolute;
+	bottom: 0px;
+}
+
+.body {
+	margin: 50px;
+}
+
+.News {
+	padding: 10px;
+}
+
+.pagination {
+	margin-top: 15px;
+}
+
+.banner img {
+   width: 1350px;
+   height: 300px;
+   margin-top: 30px;
+}
+
+.content_container {
+    margin: 50px;
+}
+
+.header_book, .header_news {
+    margin-bottom: 20px;
+}
+
+.author_name {
+    font-family: "Merriweather";
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.img_book {
+    max-width: 120px;
+    max-height: 200px;
+    margin-right: 20px;
+}
+
+.book_item {
+    margin-bottom: 30px;
+    width: 400px;
+}
+
+.cmtarea {
+	resize: none;
+	height: 100px;
+	width: 800px;
+	border-radius: 5px;
+}
+
+.text {
+	margin-bottom: 5px;
+}
+
+.inputarea {
+	resize: none;
+	height: 30px;
+	width: 800px;
+	border-radius: 5px;
+}
+
+.area {
+	margin-bottom: 15px;
+}
+
+.header {
+	margin-right: 70px;
+}
+
+.header_font {
+    font-family: "Calistoga";
+}
+
+p {
+    font-family: "Asap";
+}
+
+.container-fluid {
+    padding: 20px 50px !important;
+}
+
+.header {
+    margin-right: 70px;
+}
+
+.logo_img {
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.header_btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#signoutBtn, .profile-btn {
+    max-width: 50%;
+    margin-left: 5rem;
+}
+
+.nav {
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.nav-link {
+    color: black !important;
+    padding: 5px 20px !important;
+}
+
+.search_box {
+    width: 250px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid red;
+    font-size: 18px;
+}
+
+.search-textbox {
+    border: none;
+    border-color: transparent;
+    height: 34px;
+    width: 190px;
+    margin-left: 5px;
+}
+
+.big-search-box {
+    width: 1050px;
+    background-color: white;
+    border-radius: 15px;
+    border: 1px solid red;
+    margin-right: 70px !important;
+}
+
+.big-search-textbox {
+    border: none;
+    border-color: transparent;
+    height: 34px;
+    width: 990px;
+    margin-left: 10px;
+}
+
+.search-textbox:focus, .big-search-textbox:focus {
+    outline-width: 0;
+}
+
+.search-header {
+    margin-left: 200px;
+    font-weight: bolder;
+}
+
+.search-text-container {
+    margin-top: 15px;
+    margin-right: 250px;
+}
+
+.adv-big-search-text {
+    font-size: 18px;
+}
+
+.filter-icon {
+    max-width: 22px;
+    max-height: 22px;
+}
+
+.collapse {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.search-option-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: lightgrey;
+  }
+
+.option-checkbox-items {
+      margin: 20px 0;
+  }
+
+.textbox-header {
+    font-family: "Merriweather";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-control {
+    width: 250px !important;
+}
+
+.search-item-container {
+    margin-left: 120px;
+    margin-top: 60px;
+}
+
+
+

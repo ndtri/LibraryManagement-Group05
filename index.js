@@ -1,18 +1,40 @@
-const express = require('express');
-const path = require('path');
+let express = require('express');
+let app = express();
 
-const app = express();
+app.use(express.static(__dirname + '/public'));
 
-const publicPath = path.join(__dirname + '/src');
-app.use(express.static(path.join(__dirname, '/src')));
+let expressHbs = require('express-handlebars');
+let hbs = expressHbs.create({
+    extname: 'hbs',
+    defaultLayout: 'layouts',
+    layoutsDir: __dirname + '/views/layouts/',
+    partialsDir: __dirname + '/views/partials/'
+})
 
-app.get('', (req, res) => {
-    res.sendFile(path.join(publicPath, 'index-guest.html'));
-});
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
 
-app.set('port', process.env.PORT || 3000);
+app.get('/', ( req, res)=> {
+    res.render('index');
+})
 
-// start server
+app.get('/intro', (req, res) =>{
+    res.render('intro');
+})
+
+app.get('/news', (req, res) => {
+    res.render('news');
+})
+
+app.get('/search', (req, res) => {
+    res.render('search');
+})
+
+app.get('/support', (req, res) => {
+    res.render('support');
+})
+    
+app.set('port', process.env.PORT || 5000);
 app.listen(app.get('port'), () => {
-    console.log(`server is listening`);
+    console.log('Server is running');
 });

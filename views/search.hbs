@@ -1,0 +1,255 @@
+<title>Search</title>
+<div class="search-bar">
+    <h3 class="search-header header_font">Tìm kiếm</h3>
+    <div class="d-flex flex-column">
+        <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+            <div class="row big-search-box">
+                <input class="big-search-textbox d-flex align-self-center" type="text"></input>
+                <button class="btn btn-link search_btn" type="submit">
+                    <img src="./images/search_button.png" alt="search_button">
+                </button>
+            </div>
+        </form>
+        <div class="search-text-container d-flex flex-row justify-content-end">
+            <img class="filter-icon" src="./images/filter.svg" alt="filter">
+            <a href="#adv-search-collapse" data-toggle="collapse" class="adv-big-search-text">Tìm kiếm nâng cao</a>
+        </div>
+
+        <div class="collapse" id="adv-search-collapse">
+            <div class="row search-option-container">
+                <div class="col d-flex justify-content-center">
+                    <form class="search-option-item1 d-flex flex-column">
+                        <div class="form-group">
+                            <label class="textbox-header" for="author-name">Tên tác giả</label>
+                            <input id="author-name" type="text" class="form-control" placeholder="Nhập tên tác giả..">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="textbox-header">Tình trạng</label>
+                            <br>
+                            <select name="state">
+                                <option value="Available">Có thể mượn</option>
+                                <option value="Unavailable">Không thể mượn</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="textbox-header">Ngôn ngữ</label>
+                            <br>
+                            <select name="language">
+                                <option value="Vietnamese">Tiếng Việt</option>
+                                <option value="English">Tiếng Anh</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="vertical-line"></div>
+
+                <div class="col d-flex justify-content-around">
+                    <div class="row d-flex align-self-stretch">
+                        <div class="col d-flex flex-column align-self-center">
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1">Thể loại 1</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2">Thể loại 2</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                                <label class="form-check-label" for="inlineCheckbox3">Thể loại 3</label>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex flex-column align-self-center">
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                                <label class="form-check-label" for="inlineCheckbox4">Thể loại 4</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                                <label class="form-check-label" for="inlineCheckbox5">Thể loại 5</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                                <label class="form-check-label" for="inlineCheckbox6">Thể loại 6</label>
+                            </div>
+                        </div>
+
+                        <div class="col d-flex flex-column align-self-center">
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                                <label class="form-check-label" for="inlineCheckbox7">Thể loại 7</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                                <label class="form-check-label" for="inlineCheckbox8">Thể loại 8</label>
+                            </div>
+                            <div class="form-check form-check-inline option-checkbox-items">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
+                                <label class="form-check-label" for="inlineCheckbox9">Thể loại 9</label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="search-item-container d-flex flex-wrap">
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+
+    <div class="d-flex flex-row book_item">
+        <img class="img_book" src="images/book.jpg">
+        <div class="d-flex flex-column">
+            <h5 class="header_font">Tên sách</h5>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+            <p class="author_name">Tên tác giả</p>
+            <span>
+                <button type="button" class="btn btn-primary">Mượn sách</button>
+            </span>
+            <a class="read_more" href="#">Xem thêm</a>
+        </div>
+    </div>
+</div>
+
+<nav aria-label="...">
+    <ul class="pagination d-flex justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+        <li class="page-item active">
+            <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+        </li>
+    </ul>
+</nav>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#loginBtn").click(function () {
+            var username = $("#uname").val();
+            var password = $("#pwd").val();
+
+            if (username == "user" && password == "user") {
+                window.location.href = "./search-user.html";
+            } else {
+                alert("Wrong username or password. Please try again.");
+            }
+        });
+
+        var prevURL = window.location.search;
+        if (prevURL == "?collapseTrigger") {
+            $('#adv-search-collapse').show();
+            $('#adv-search-collapse').on('show.bs.collapse', function () {
+                $('#adv-search-collapse').hide();
+                window.location.search = "";
+            });
+            $('#adv-search-collapse').on('hide.bs.collapse', function () {
+                $('#adv-search-collapse').show();
+            });
+        }
+    });
+</script>
+

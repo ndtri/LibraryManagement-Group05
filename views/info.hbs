@@ -1,0 +1,93 @@
+<title>Info</title>
+<div class="body">
+    <div class="row">
+        <div class="col">
+            <div class="row bookinfo">
+                <img class="col cover" src="images/book.jpg">
+                <div class="col">
+                    <h4 class="header_font">The Lightest object in university</h4>
+                    <p><b>Tác giả: </b>Kimi Esele</p>
+                    <p><b>Tình trạng: </b>Còn sách</p>
+                    <p><b>Đánh giá: </b>4,5/5</p>
+                    <button type="button" class="btn btn-primary header_btn borrow">Mượn</button>
+                </div>
+            </div>
+            <div class="Details">
+                <h4 class="header_font">Nội dung</h4>
+                <p>The Lightest object in university là một câu chuyện về sự phụ thuộc và thích nghi, một minh chứng
+                    cho sức mạnh của cộng đồng
+                    và một biên niên sử tiếp tục sau mất mát thảm khốc, minh họa rằng ngay cả trong những thời điểm
+                    tồi tệ nhất, những đặc
+                    điểm tốt nhất của chúng ta, có thể bắt đầu nổi lên.</p>
+            </div>
+            <hr>
+            <h4 class="cmtheader header_font">Đóng góp và bình luận</h4>
+            <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>
+            <button type="button" class="btn btn-primary header_btn send-comment">Gửi đóng góp</button>
+            <div class="row comment">
+                <div class="col-md-1">
+                    <img class="avatar" src="./images/avatar.png"></img>
+                </div>
+                <div class="col-md-11 conttent">
+                    <h5 class="header_font">Name</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quasi vel tempora ex tempore
+                        nihil commodi
+                        optio necessitatibus quo molestias consequatur, possimus sint consectetur ea veritatis
+                        provident eos
+                        porro adipisci.</p>
+                    <a class="action Thích" id="thich" href>Thích</a>
+                    <a id="phanhoi" href="#response" data-toggle="collapse">Phản hồi</a>
+                    <div class="collapse" id="response">
+                        <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>
+                        <button type="button" class="btn btn-primary header_btn send-comment">Gửi đóng góp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row comment">
+                <div class="col-md-1">
+                    <img class="avatar" src="./images/avatar.png"></img>
+                </div>
+                <div class="col-md-11 conttent">
+                    <h5 class="header_font">Name</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quasi vel tempora ex tempore
+                        nihil commodi
+                        optio necessitatibus quo molestias consequatur, possimus sint consectetur ea veritatis
+                        provident eos
+                        porro adipisci.</p>
+                    <a class="action Thích" id="thich" href>Thích</a>
+                    <a id="phanhoi" href="#response1" data-toggle="collapse">Phản hồi</a>
+                    <div class="collapse" id="response1">
+                        <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>
+                        <button type="button" class="btn btn-primary header_btn send-comment">Gửi đóng góp</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row comment">
+                <div class="col-md-1">
+                    <img class="avatar" src="./images/avatar.png"></img>
+                </div>
+                <div class="col-md-11 conttent">
+                    <h5 class="header_font">Name</h5>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui quasi vel tempora ex tempore
+                        nihil commodi
+                        optio necessitatibus quo molestias consequatur, possimus sint consectetur ea veritatis
+                        provident eos
+                        porro adipisci.</p>
+                    <a class="action Thích" id="thich" href>Thích</a>
+                    <a id="phanhoi" href="#response2" data-toggle="collapse">Phản hồi</a>
+                    <div class="collapse" id="response2">
+                        <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>
+                        <button type="button" class="btn btn-primary header_btn send-comment">Gửi đóng góp</button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center comment">
+                    <button type="button" class="btn btn-primary header_btn loadcomment">Tải thêm 10 đóng
+                        góp</button>
+                </div>
+            </div>
+        </div>
+        {{>news_collapsed}}
+    </div>
+</div>

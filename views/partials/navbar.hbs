@@ -1,0 +1,180 @@
+<div class="header">
+    <div class="header_logo">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <a href="./index-guest.html">
+                        <img class="logo_img" src="./images/logo-khtn-full.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-3">
+                <div class="d-flex flex-row d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary header_btn mr-1" data-toggle="modal"
+                        data-target="#loginModal">Đăng nhập</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLable"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModal">Đăng nhập</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="was-validated">
+                                        <div class="form-group">
+                                            <label for="uname">Username:</label>
+                                            <input type="text" class="form-control" id="uname"
+                                                placeholder="Enter username" name="uname" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="pwd">Password:</label>
+                                            <input type="password" class="form-control" id="pwd"
+                                                placeholder="Enter password" name="pswd" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="loginBtn" type="button" class="btn btn-primary">Đăng nhập</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="btn btn-primary header_btn" data-toggle="modal"
+                        data-target="#signupModal">Đăng kí</button>
+                    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupLable"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="loginModal">Đăng Kí</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="was-validated">
+                                        <div class="form-group">
+                                            <label for="uname">Username:</label>
+                                            <input type="text" class="form-control" id="uname-su"
+                                                placeholder="Enter username" name="uname-su" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                            <small id="unameHelp" class="form-text text-muted">Username can contain any
+                                                letters or numbers, without spaces</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="uname">Email:</label>
+                                            <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                                name="email" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pwd">Password:</label>
+                                            <input type="password" class="form-control" id="pwd-su"
+                                                placeholder="Enter password" name="pswd-su" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                            <small id="pwdHelp" class="form-text text-muted">Password should be at least
+                                                4 characters</small>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="pwd">Password (Confirm):</label>
+                                            <input type="password" class="form-control" id="pwdcf"
+                                                placeholder="Confirm password" name="pswdcf" required>
+                                            <div class="valid-feedback">Valid.</div>
+                                            <div class="invalid-feedback">Please fill out this field.</div>
+                                            <small id="pwdHelp" class="form-text text-muted">Confirm password</small>
+                                        </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button id="signupBtn" type="button" class="btn btn-primary">Đăng kí</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav_search row">
+        <div class="col d-flex align-items-baseline">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="nav collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-pills">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/search">Tìm kiếm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/intro">Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/support">Hỗ trợ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/news">Tin tức</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="col-3 d-flex justify-content-center">
+            <div class="d-flex flex-column">
+                <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                    <div class="row search_box">
+                        <input class="search-textbox d-flex align-self-center" type="text"></input>
+                        <button class="btn btn-link search_btn" type="submit">
+                            <img src="./images/search_button.png" alt="search_button">
+                        </button>
+                    </div>
+                </form>
+                <a href="./search-guest.html?collapseTrigger" class="d-flex justify-content-center">Tìm kiếm nâng cao</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#loginBtn").click(function () {
+            var username = $("#uname").val();
+            var password = $("#pwd").val();
+
+            if (username == "user" && password == "user") {
+                window.location.href = "./Support-user.html";
+            } else {
+                alert("Wrong username or password. Please try again.");
+            }
+        });
+
+        var pathname = window.location.pathname;
+        console.log(pathname);
+        $('.navbar-nav > li > a[href="' + pathname + '"]').parent().children().addClass('active');
+    });
+
+   
+</script>
