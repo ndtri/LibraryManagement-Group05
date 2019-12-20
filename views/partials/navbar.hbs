@@ -148,7 +148,7 @@
                     <div class="row search_box">
                         <input class="search-textbox d-flex align-self-center" type="text"></input>
                         <button class="btn btn-link search_btn" type="submit">
-                            <img src="./images/search_button.png" alt="search_button">
+                            <img src="/images/search_button.png" alt="search_button">
                         </button>
                     </div>
                 </form>
@@ -171,8 +171,9 @@
             }
         });
 
-        var pathname = window.location.pathname;
+        var pathname = window.location.pathname.split('?')[0];
         console.log(pathname);
+
         $('.navbar-nav > li > a[href="' + pathname + '"]').parent().children().addClass('active');
     });
 
