@@ -17,6 +17,9 @@ module.exports = {
       availability: {
         type: Sequelize.STRING
       },
+      language: {
+        type: Sequelize.STRING
+      },
       rating: {
         type: Sequelize.INTEGER
       },
@@ -25,6 +28,9 @@ module.exports = {
       },
       quantity: {
         type: Sequelize.INTEGER
+      },
+      imgPath: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

@@ -99,7 +99,7 @@ p {
 }
 
 .read_more {
-	margin-top: 15px;
+	margin-top: 5px;
 }
 
 .footer_item1 {
@@ -182,8 +182,8 @@ p {
 }
 
 .img_book {
-    max-width: 120px;
-    max-height: 200px;
+    max-width: 130px;
+    max-height: 250px;
     margin-right: 20px;
 }
 

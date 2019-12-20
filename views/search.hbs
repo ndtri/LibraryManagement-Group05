@@ -6,12 +6,12 @@
             <div class="row big-search-box">
                 <input class="big-search-textbox d-flex align-self-center" type="text"></input>
                 <button class="btn btn-link search_btn" type="submit">
-                    <img src="./images/search_button.png" alt="search_button">
+                    <img src="images/search_button.png" alt="search_button">
                 </button>
             </div>
         </form>
         <div class="search-text-container d-flex flex-row justify-content-end">
-            <img class="filter-icon" src="./images/filter.svg" alt="filter">
+            <img class="filter-icon" src="images/filter.svg" alt="filter">
             <a href="#adv-search-collapse" data-toggle="collapse" class="adv-big-search-text">Tìm kiếm nâng cao</a>
         </div>
 
@@ -101,109 +101,25 @@
 </div>
 
 <div class="search-item-container d-flex flex-wrap">
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
+    {{#each books}}
+    <div class="d-flex flex-row book_item mr-4">
+        <img class="img_book" src="{{imgPath}}">
+        <div class="d-flex flex-column align-content-between">    
+            <div class="d-flex flex-column" style="height: 160px">
+                <h5 class="header_font">{{title}}</h5>
+                <p class="author_name">{{author}}</p>
+                <p>{{language}}</p>
+            </div>
+            
+            <div class="d-flex flex-column">
+                <span>
+                    <button type="button" class="btn btn-primary">Mượn sách</button>
+                </span>
+                <a class="read_more" href="#">Xem thêm</a>
+            </div>  
         </div>
     </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
-
-    <div class="d-flex flex-row book_item">
-        <img class="img_book" src="images/book.jpg">
-        <div class="d-flex flex-column">
-            <h5 class="header_font">Tên sách</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <p class="author_name">Tên tác giả</p>
-            <span>
-                <button type="button" class="btn btn-primary">Mượn sách</button>
-            </span>
-            <a class="read_more" href="#">Xem thêm</a>
-        </div>
-    </div>
+    {{/each}}
 </div>
 
 <nav aria-label="...">
