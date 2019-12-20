@@ -2,7 +2,18 @@ let express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index');
+    let bookController = require('../controllers/bookController');
+    bookController
+    .getHotBook()
+    .then(data => {
+        res.locals.hotBooks = data;
+        return bookController.getNewBook();
+    })
+    .then(data => {
+        res.locals.newBooks = data;
+        res.render('index');
+    })
+    .catch(error => next(error));
 });
 
 router.get('/news', (req, res) => {

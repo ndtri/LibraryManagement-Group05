@@ -23,6 +23,36 @@ controller.getById = (id) => {
     })
 };
 
+controller.getHotBook = () => {
+    return new Promise((resolve, reject) => {
+        models.Book
+        .findAll({
+            order: [
+                ['rating', 'DESC']
+            ],
+            limit: 3,
+            attribute: ['id', 'title', 'author', 'language']
+        })
+        .then(data => resolve(data))
+        .catch(error => reject(new Error(error)));
+    });
+};
+
+controller.getNewBook = () => {
+    return new Promise((resolve, reject) => {
+        models.Book
+        .findAll({
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            limit: 3,
+            attribute: ['id', 'title', 'author', 'language']
+        })
+        .then(data => resolve(data))
+        .catch(error => reject(new Error(error)));
+    });
+};
+
 // controller.getAll = (query) => {
 //     return new Promise((resolve, reject) => {
 //         console.log("Get All query.")
