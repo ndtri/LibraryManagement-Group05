@@ -2,24 +2,24 @@
 <div class="body">
     <div class="row">
         <div class="col">
-            <div class="row bookinfo">
-                <img class="col cover" src="/images/book.jpg">
-                <div class="col">
-                    <h4 class="header_font">The Lightest object in university</h4>
-                    <p><b>Tác giả: </b>Kimi Esele</p>
-                    <p><b>Tình trạng: </b>Còn sách</p>
-                    <p><b>Đánh giá: </b>4,5/5</p>
-                    <button type="button" class="btn btn-primary header_btn borrow">Mượn</button>
+            {{#with book}}
+            <div class="row">
+                <img class="col-6 bookinfo" src="{{imgPath}}">
+                <div class="col-6">
+                    <h4 class="header_font">{{title}}</h4>
+                    <p><b>Tác giả: </b>{{author}}</p>
+                    <p><b>Ngôn ngữ: </b>{{language}}</p>
+                    <p><b>Thể loại: </b>{{Type.typeName}}</p>
+                    <p><b>Tình trạng: </b>{{availability}}</p>
+                    <p><b>Đánh giá: </b>{{rating}}/5</p>
+                    <button type="button" class="btn btn-primary borrow">Mượn sách</button>
                 </div>
             </div>
             <div class="Details">
                 <h4 class="header_font">Nội dung</h4>
-                <p>The Lightest object in university là một câu chuyện về sự phụ thuộc và thích nghi, một minh chứng
-                    cho sức mạnh của cộng đồng
-                    và một biên niên sử tiếp tục sau mất mát thảm khốc, minh họa rằng ngay cả trong những thời điểm
-                    tồi tệ nhất, những đặc
-                    điểm tốt nhất của chúng ta, có thể bắt đầu nổi lên.</p>
+                <p>{{content}}</p>
             </div>
+            {{/with}}
             <hr>
             <h4 class="cmtheader header_font">Đóng góp và bình luận</h4>
             <textarea class="cmtarea" placeholder="Viết đóng góp của bạn"></textarea><br>

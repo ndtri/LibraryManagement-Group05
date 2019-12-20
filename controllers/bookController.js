@@ -16,7 +16,8 @@ controller.getById = (id) => {
     return new Promise((resolve, reject) => {
         models.Book
         .findOne({
-            where: {id : id}
+            where: {id : id},
+            include: [{ model: models.Type }]
         })
         .then(data => resolve(data))
         .catch(error => reject(new Error(error)))

@@ -13,7 +13,14 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res) => {
-    res.render('info');
+    let bookController = require('../controllers/bookController');
+    bookController
+    .getById(req.params.id)
+    .then(book => {
+        res.locals.book = book;
+        res.render('info');
+    })
+    .catch(error => next(error));
 });
 
 module.exports = router;
