@@ -1,12 +1,59 @@
 let controller = {};
 let models = require('../models');
 
-controller.getAll = () => {
+controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
+        let = options = {
+            include: [{ model:models.Type }],
+            attribute : ['id', 'title', 'availability', 'author', 'rating', 'content', 'quantity', 'language'],
+            where: {}
+        };
+
+        // if (query.limit > 0) {
+        //     options.limit = query.limit,
+        //     options.offset = query.limit * (query.page -1)
+        // }
+
+        if (query.language) {
+            options.where.language = query.language;
+        }
+
+        if (query.availability) {
+            options.where.availability = query.availability;
+        }
+
+        if (query.type) {
+            options.where.typeId = query.type;
+        }
+
+        // var Sequelize = require('sequelize');
+        // if (query.search != '') {
+        //     options.where.title  = {
+        //         [Sequelize.Op.iLike] : `%${query.search}%`
+        //     }
+        // }
+    
+        // if (query.sort) {
+        //     switch (query.sort){
+        //         case 'rating': 
+        //             options.order = [
+        //                 ['rating','DESC']
+        //             ];
+        //             break;
+        //         case 'quantity':
+        //             options.order = [
+        //                 ['quantity','DESC']
+        //             ];
+        //             break;
+        //         default:
+        //             options.order = [
+        //                 ['title','ASC']
+        //             ]
+        //     }
+        // }
+
         models.Book
-            .findAll({
-                attribute : ['id', 'title', 'availability', 'author', 'rating', 'content', 'quantity', 'language'],
-            })
+            .findAll(options)
             .then(data => resolve(data))
             .catch(error => reject(new Error(error)));
     });
@@ -53,15 +100,5 @@ controller.getNewBook = () => {
         .catch(error => reject(new Error(error)));
     });
 };
-
-// controller.getAll = (query) => {
-//     return new Promise((resolve, reject) => {
-//         console.log("Get All query.")
-//         let options = {
-//             attribute : ['id', 'title', 'availability', 'author', 'rating', 'content', 'quantity', 'language'],
-        
-//         }
-//     })
-// };
 
 module.exports = controller;

@@ -8,9 +8,9 @@
                 <div class="col-6">
                     <h4 class="header_font">{{title}}</h4>
                     <p><b>Tác giả: </b>{{author}}</p>
-                    <p><b>Ngôn ngữ: </b>{{language}}</p>
+                    <p><b>Ngôn ngữ: </b>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</p>
                     <p><b>Thể loại: </b>{{Type.typeName}}</p>
-                    <p><b>Tình trạng: </b>{{availability}}</p>
+                    <p><b>Tình trạng: </b>{{#ifCond availability "===" "available"}}Có thể mượn{{else}}Không thể mượn{{/ifCond}}</p>
                     <p><b>Đánh giá: </b>{{rating}}/5</p>
                     <button type="button" class="btn btn-primary borrow">Mượn sách</button>
                 </div>
