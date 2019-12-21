@@ -9,10 +9,10 @@ controller.getAll = (query) => {
             where: {}
         };
 
-        // if (query.limit > 0) {
-        //     options.limit = query.limit,
-        //     options.offset = query.limit * (query.page -1)
-        // }
+        if (query.limit > 0) {
+            options.limit = query.limit,
+            options.offset = query.limit * (query.page -1)
+        }
 
         if (query.language) {
             options.where.language = query.language;
@@ -35,9 +35,19 @@ controller.getAll = (query) => {
     
         if (query.sort) {
             switch (query.sort){
+                case 'title': 
+                    options.order = [
+                        ['title','ASC']
+                    ];
+                    break;
                 case 'rating': 
                     options.order = [
                         ['rating','DESC']
+                    ];
+                    break;
+                case 'author': 
+                    options.order = [
+                        ['author','ASC']
                     ];
                     break;
                 case 'quantity':
@@ -53,7 +63,7 @@ controller.getAll = (query) => {
         }
 
         models.Book
-            .findAll(options)
+            .findAndCountAll(options) // return rows, count
             .then(data => resolve(data))
             .catch(error => reject(new Error(error)));
     });

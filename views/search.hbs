@@ -101,51 +101,42 @@
 </div>
 <hr>
 <div class="filter">
-            <div class="filter-btns btn-group d-flex justify-content-center" role="group" aria-label="Button group with nested dropdown">
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sắp xếp theo
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" onclick="selectParam('sort','title')" >Tên sách</a>
-                        <a class="dropdown-item" onclick="selectParam('sort','rating')" >Đánh giá</a>
-                    </div>
+            <div class="btn-group d-flex justify-content-center" role="group" aria-label="Button group with nested dropdown">
+                <div>
+                    <select id="sort" onchange="selectParam('sort',this.value)">
+                        <option value="" selected disabled hidden>Sắp xếp theo</option>
+                        <option value="title">Sắp xếp theo tên sách</option>
+                        <option value="author">Sắp xếp theo tên tác giả</option>
+                        <option value="rating">Sắp xếp theo đánh giá</option>
+                    </select>
                 </div>
-                <div class="btn-group ml-3" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tình trạng
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                         <a class="dropdown-item" onclick="selectParam('availability','available')" >Có thể mượn</a>
-                        <a class="dropdown-item" onclick="selectParam('availability','unavailable')" >Không thể mượn</a>
-                    </div>
+
+                <div class="ml-3">
+                    <select id="availability" onchange="selectParam('availability',this.value)">
+                        <option value="" selected disabled hidden>Tình trạng</option>
+                        <option value="available">Có thể mượn</option>
+                        <option value="unavailable">Không thể mượn</option>
+                    </select>
                 </div>
-                <div class="btn-group mx-3" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Thể loại
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" onclick="selectParam('type','')" >Tất cả</a>
-                        <a class="dropdown-item" onclick="selectParam('type','1')">Lập trình</a>
-                        <a class="dropdown-item" onclick="selectParam('type','2')">Tâm lí - Kĩ năng sống</a>
-                        <a class="dropdown-item" onclick="selectParam('type','3')">Khoa học - Kĩ thuật</a>
-                        <a class="dropdown-item" onclick="selectParam('type','4')">Hồi ký - Tuỳ bút</a>
-                    </div>
+
+                <div class="ml-3">
+                    <select id="type" onchange="selectParam('type',this.value)">
+                        <option value="" selected>Tất cả thể loại</option>
+                        <option value="1">Lập trình</option>
+                        <option value="2">Tâm lí - Kĩ năng sống</option>
+                        <option value="3">Khoa học - Kĩ thuật</option>
+                        <option value="4">Hồi ký - Tuỳ bút</option>
+                    </select>
                 </div>
-                <div class="btn-group" role="group">
-                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Ngôn ngữ
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                        <a class="dropdown-item" onclick="selectParam('language','')" >Tất cả</a>
-                        <a class="dropdown-item" onclick="selectParam('language','vi')" >Tiếng Việt</a>
-                        <a class="dropdown-item" onclick="selectParam('language','en')">Tiếng Anh</a>
-                    </div>
+
+                <div class="ml-3">
+                    <select id="language" onchange="selectParam('language',this.value)">
+                        <option value="" selected hidden disabled>Ngôn ngữ</option>
+                        <option value="vi">Tiếng Việt</option>
+                        <option value="en">Tiếng Anh</option>
+                    </select>
                 </div>
+                
                 <button type="button" class="btn-primary ml-3" style="border-radius: 5px;" onclick="resetFilter()">Reset Filter</button>
             </div>
         </div>
@@ -172,22 +163,8 @@
     {{/each}}
 </div>
 
-<nav aria-label="...">
-    <ul class="pagination d-flex justify-content-center">
-        <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item active">
-            <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-            <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-            <a class="page-link" href="#">Next</a>
-        </li>
-    </ul>
+<nav class="d-flex justify-content-center" aria-label="..." id="pagination">
+    {{{ createPagination pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
 </nav>
 
 
@@ -205,17 +182,32 @@
             }
         });
 
-        var prevURL = window.location.search;
-        if (prevURL == "?collapseTrigger") {
-            $('#adv-search-collapse').show();
-            $('#adv-search-collapse').on('show.bs.collapse', function () {
-                $('#adv-search-collapse').hide();
-                window.location.search = "";
-            });
-            $('#adv-search-collapse').on('hide.bs.collapse', function () {
-                $('#adv-search-collapse').show();
-            });
-        }
+        //var prevURL = window.location.search;
+        //if (prevURL == "?collapseTrigger") {
+        //    $('#adv-search-collapse').show();
+        //    $('#adv-search-collapse').on('show.bs.collapse', function () {
+        //        $('#adv-search-collapse').hide();
+        //        window.location.search = "";
+        //    });
+        //    $('#adv-search-collapse').on('hide.bs.collapse', function () {
+        //        $('#adv-search-collapse').show();
+        //    });
+        //}
+
+        $("#pagination li").addClass('page-item');
+        $("#pagination li a").addClass('page-link');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            let savePage = urlParams.get('page');
+            urlParams.set('page', page);
+            let href = '/search?' + urlParams.toString();
+            $(item).attr('href',href);
+        })
+
+        $('#sort').val(urlParams.get('sort'));
+        $('#availability').val(urlParams.get('availability'));
+        $('#type').val(urlParams.get('type'));
+        $('#language').val(urlParams.get('language'));
     });
 
     let urlParams = new URLSearchParams(location.search);
@@ -225,18 +217,9 @@
         language : '',
         availability : '',
         type : '',
-        sort : ''
+        sort : 'title',
+        search : ''
     }   
-    $("#pagination li").addClass('page-item');
-    $("#pagination li a").addClass('page-link');
-    $("#pagination li a").each((index,item)=>{
-        let page = $(item).attr('href').split('=')[1];
-        let savePage = urlParams.get('page');
-        urlParams.set('page',page);
-        let href = '/search?' + urlParams.toString();
-        $(item).attr('href',href);
-    })
-
 
     for (let key in params) {
         if (!urlParams.has(key)) {

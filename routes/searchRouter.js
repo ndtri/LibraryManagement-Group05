@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
     }
 
     if (req.query.sort == null) {
-        req.query.sort = 'name';
+        req.query.sort = 'title';
     }
 
     if (req.query.search == null || req.query.search.trim() == '') {
@@ -30,7 +30,12 @@ router.get('/', (req, res, next) => {
     bookController
         .getAll(request)
         .then(data => {
-            res.locals.books = data;
+            res.locals.books = data.rows;
+            res.locals.pagination = {
+                page: parseInt(req.query.page),
+                limit: parseInt(req.query.limit),
+                totalRows: data.count
+            };
             res.render('search');
         })
         .catch(error => next(error));

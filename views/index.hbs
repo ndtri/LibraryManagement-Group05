@@ -15,7 +15,7 @@
                         <div class="d-flex flex-column" style="height: 160px">
                             <h5 class="header_font">{{title}}</h5>
                             <p class="author_name">{{author}}</p>
-                            <p>{{language}}</p>
+                            <p>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</p>
                         </div>
                         
                         <div class="d-flex flex-column">
@@ -40,7 +40,7 @@
                         <div class="d-flex flex-column" style="height: 160px">
                             <h5 class="header_font">{{title}}</h5>
                             <p class="author_name">{{author}}</p>
-                            <p>{{language}}</p>
+                            <p>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</p>
                         </div>
                         
                         <div class="d-flex flex-column">
