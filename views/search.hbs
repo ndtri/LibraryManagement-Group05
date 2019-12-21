@@ -4,7 +4,7 @@
     <div class="d-flex flex-column">
         <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
             <div class="row big-search-box">
-                <input class="big-search-textbox d-flex align-self-center" type="text"></input>
+                <input class="big-search-textbox d-flex align-self-center" type="text" name="search"></input>
                 <button class="btn btn-link search_btn" type="submit">
                     <img src="images/search_button.png" alt="search_button">
                 </button>
@@ -99,6 +99,56 @@
         </div>
     </div>
 </div>
+<hr>
+<div class="filter">
+            <div class="filter-btns btn-group d-flex justify-content-center" role="group" aria-label="Button group with nested dropdown">
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sắp xếp theo
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                         <a class="dropdown-item" onclick="selectParam('sort','title')" >Tên sách</a>
+                        <a class="dropdown-item" onclick="selectParam('sort','rating')" >Đánh giá</a>
+                        <a class="dropdown-item" onclick="selectParam('sort','quantity')" >Số lượng</a>
+                    </div>
+                </div>
+                <div class="btn-group ml-3" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tình trạng
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                         <a class="dropdown-item" onclick="selectParam('availability','available')" >Có thể mượn</a>
+                        <a class="dropdown-item" onclick="selectParam('availability','unavailable')" >Không thể mượn</a>
+                    </div>
+                </div>
+                <div class="btn-group mx-3" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Thể loại
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" onclick="selectParam('type','')" >Tất cả</a>
+                        <a class="dropdown-item" onclick="selectParam('type','1')">Lập trình</a>
+                        <a class="dropdown-item" onclick="selectParam('type','2')">Tâm lí - Kĩ năng sống</a>
+                        <a class="dropdown-item" onclick="selectParam('type','3')">Khoa học - Kĩ thuật</a>
+                        <a class="dropdown-item" onclick="selectParam('type','4')">Hồi ký - Tuỳ bút</a>
+                    </div>
+                </div>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-primary dropdown-toggle"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ngôn ngữ
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" onclick="selectParam('language','')" >Tất cả</a>
+                        <a class="dropdown-item" onclick="selectParam('language','vi')" >Tiếng Việt</a>
+                        <a class="dropdown-item" onclick="selectParam('language','en')">Tiếng Anh</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 <div class="search-item-container d-flex flex-wrap">
     {{#each books}}
@@ -108,7 +158,7 @@
             <div class="d-flex flex-column" style="height: 160px">
                 <h5 class="header_font">{{title}}</h5>
                 <p class="author_name">{{author}}</p>
-                <p>{{language}}</p>
+                <p>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</p>
             </div>
             
             <div class="d-flex flex-column">
@@ -167,5 +217,37 @@
             });
         }
     });
+
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+        limit: 4,
+        page : 1,
+        language : '',
+        availability : '',
+        type : '',
+        sort : ''
+    }   
+    $("#pagination li").addClass('page-item');
+    $("#pagination li a").addClass('page-link');
+    $("#pagination li a").each((index,item)=>{
+        let page = $(item).attr('href').split('=')[1];
+        let savePage = urlParams.get('page');
+        urlParams.set('page',page);
+        let href = '/search?' + urlParams.toString();
+        $(item).attr('href',href);
+    })
+
+
+    for (let key in params) {
+        if (!urlParams.has(key)) {
+            urlParams.append(key, params[key]);
+        }
+    }
+
+    function selectParam(key, value) {
+        urlParams.set(key,value)
+        let url = '/search?' + urlParams.toString();
+        location.href = url;
+    }
 </script>
 
