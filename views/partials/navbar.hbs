@@ -40,10 +40,11 @@
                                             <div class="valid-feedback">Valid.</div>
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                         </div>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button id="loginBtn" type="button" class="btn btn-primary">Đăng nhập</button>
+                                    <button id="loginBtn" type="submit" class="btn btn-primary">Đăng nhập</button>
                                 </div>
                             </div>
                         </div>
@@ -99,10 +100,11 @@
                                             <div class="invalid-feedback">Please fill out this field.</div>
                                             <small id="pwdHelp" class="form-text text-muted">Confirm password</small>
                                         </div>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <button id="signupBtn" type="button" class="btn btn-primary">Đăng kí</button>
+                                    <button id="signupBtn" type="submit" class="btn btn-primary">Đăng kí</button>
                                 </div>
                             </div>
                         </div>
@@ -142,19 +144,19 @@
                 </div>
             </nav>
         </div>
-        <div class="col-3 d-flex justify-content-center">
+        {{!-- <div class="col-3 d-flex justify-content-center">
             <div class="d-flex flex-column">
-                <form class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+                <form action="/search" method="GET" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
                     <div class="row search_box">
-                        <input class="search-textbox d-flex align-self-center" type="text"></input>
+                        <input class="search-textbox d-flex align-self-center" type="text" name="search"></input>
                         <button class="btn btn-link search_btn" type="submit">
                             <img src="/images/search_button.png" alt="search_button">
                         </button>
                     </div>
                 </form>
-                <a href="./search-guest.html?collapseTrigger" class="d-flex justify-content-center">Tìm kiếm nâng cao</a>
+                <a href="/search" class="d-flex justify-content-center">Tìm kiếm nâng cao</a>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 

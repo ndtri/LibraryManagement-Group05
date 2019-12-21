@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
-const expressHbs = require('express-handlebars');
+let expressHbs = require('express-handlebars');
+let paginateHelper = require('express-handlebars-paginate');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -10,6 +11,8 @@ let hbs = expressHbs.create({
     layoutsDir: __dirname + '/views/layouts',
     partialsDir: __dirname + '/views/partials',
     helpers: {
+        createPagination: paginateHelper.createPagination,
+
         ifCond : function (v1, operator, v2, options) {
             switch (operator) {
                 case '==':

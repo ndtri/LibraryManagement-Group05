@@ -349,5 +349,12 @@ p {
     margin-top: 60px;
 }
 
-
+select {
+    border-radius: 5px;
+    height: 40px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    padding-left: 10px;
+    padding-right: 5px  ;
+}
 
