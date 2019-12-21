@@ -26,31 +26,31 @@ controller.getAll = (query) => {
             options.where.typeId = query.type;
         }
 
-        // var Sequelize = require('sequelize');
-        // if (query.search != '') {
-        //     options.where.title  = {
-        //         [Sequelize.Op.iLike] : `%${query.search}%`
-        //     }
-        // }
+        var Sequelize = require('sequelize');
+        if (query.search != '') {
+            options.where.title  = {
+                [Sequelize.Op.iLike] : `%${query.search}%`
+            }
+        }
     
-        // if (query.sort) {
-        //     switch (query.sort){
-        //         case 'rating': 
-        //             options.order = [
-        //                 ['rating','DESC']
-        //             ];
-        //             break;
-        //         case 'quantity':
-        //             options.order = [
-        //                 ['quantity','DESC']
-        //             ];
-        //             break;
-        //         default:
-        //             options.order = [
-        //                 ['title','ASC']
-        //             ]
-        //     }
-        // }
+        if (query.sort) {
+            switch (query.sort){
+                case 'rating': 
+                    options.order = [
+                        ['rating','DESC']
+                    ];
+                    break;
+                case 'quantity':
+                    options.order = [
+                        ['quantity','DESC']
+                    ];
+                    break;
+                default:
+                    options.order = [
+                        ['title','ASC']
+                    ]
+            }
+        }
 
         models.Book
             .findAll(options)
