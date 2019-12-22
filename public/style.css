@@ -358,3 +358,9 @@ select {
     padding-right: 5px  ;
 }
 
+.account-btn {
+    width: 200px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    visibility: collapse;
+}
