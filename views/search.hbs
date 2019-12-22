@@ -196,13 +196,14 @@
 
         $("#pagination li").addClass('page-item');
         $("#pagination li a").addClass('page-link');
+        let savePage = urlParams.get('page');
         $("#pagination li a").each((index,item)=>{
             let page = $(item).attr('href').split('=')[1];
-            let savePage = urlParams.get('page');
             urlParams.set('page', page);
             let href = '/search?' + urlParams.toString();
-            $(item).attr('href',href);
+            $(item).attr('href', href);
         })
+        urlParams.set('page', savePage);
 
         $('#sort').val(urlParams.get('sort'));
         $('#availability').val(urlParams.get('availability'));
@@ -212,8 +213,8 @@
 
     let urlParams = new URLSearchParams(location.search);
     let params = {
-        limit: 6,
         page : 1,
+        limit: 6,
         language : '',
         availability : '',
         type : '',
@@ -228,7 +229,7 @@
     }
 
     function selectParam(key, value) {
-        urlParams.set(key,value)
+        urlParams.set(key, value);
         let url = '/search?' + urlParams.toString();
         location.href = url;
     }

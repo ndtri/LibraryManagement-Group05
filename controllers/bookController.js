@@ -11,7 +11,7 @@ controller.getAll = (query) => {
 
         if (query.limit > 0) {
             options.limit = query.limit,
-            options.offset = query.limit * (query.page -1)
+            options.offset = query.limit * (query.page - 1)
         }
 
         if (query.language) {
@@ -28,9 +28,21 @@ controller.getAll = (query) => {
 
         var Sequelize = require('sequelize');
         if (query.search != '') {
-            options.where.title  = {
-                [Sequelize.Op.iLike] : `%${query.search}%`
+            options.where = {
+                [Sequelize.Op.or]:[
+                    {
+                        title : {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    },
+                    {
+                        author: {
+                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        }
+                    }
+                ]
             }
+            
         }
     
         if (query.sort) {
