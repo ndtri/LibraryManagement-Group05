@@ -5,7 +5,7 @@ controller.getAll = (query) => {
     return new Promise((resolve, reject) => {
         let = options = {
             include: [{ model:models.Type }],
-            attribute : ['id', 'title', 'availability', 'author', 'rating', 'content', 'quantity', 'language'],
+            attribute : ['id', 'title', 'availability', 'author', 'version', 'rating', 'content', 'quantity', 'language'],
             where: {}
         };
 
@@ -34,15 +34,21 @@ controller.getAll = (query) => {
                         title : {
                             [Sequelize.Op.iLike] : `%${query.search}%`
                         }
-                    },
+                    }
+                ]
+            } 
+        }
+
+        if (query.author != '') {
+            options.where = {
+                [Sequelize.Op.or]:[
                     {
-                        author: {
-                            [Sequelize.Op.iLike] : `%${query.search}%`
+                        author : {
+                            [Sequelize.Op.iLike] : `%${query.author}%`
                         }
                     }
                 ]
-            }
-            
+            } 
         }
     
         if (query.sort) {
@@ -101,7 +107,7 @@ controller.getHotBook = () => {
                 ['rating', 'DESC']
             ],
             limit: 3,
-            attribute: ['id', 'title', 'author', 'language']
+            attribute: ['id', 'title', 'author', 'version', 'language']
         })
         .then(data => resolve(data))
         .catch(error => reject(new Error(error)));
@@ -116,7 +122,7 @@ controller.getNewBook = () => {
                 ['createdAt', 'DESC']
             ],
             limit: 3,
-            attribute: ['id', 'title', 'author', 'language']
+            attribute: ['id', 'title', 'author', 'version', 'language']
         })
         .then(data => resolve(data))
         .catch(error => reject(new Error(error)));

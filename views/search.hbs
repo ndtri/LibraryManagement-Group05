@@ -2,14 +2,15 @@
 <div class="search-bar">
     <h3 class="search-header header_font">Tìm kiếm</h3>
     <div class="d-flex flex-column">
-        <form action="/search" method="GET" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
+        <form id="searchForm" action="/search" method="GET" class="form-inline my-2 my-lg-0 d-flex justify-content-center">
             <div class="row big-search-box">
                 <input class="big-search-textbox d-flex align-self-center" type="text" name="search"></input>
-                <button class="btn btn-link search_btn" type="submit">
+                <button id="submitFormsBtn" class="btn btn-link search_btn" type="button">
                     <img src="images/search_button.png" alt="search_button">
                 </button>
             </div>
         </form>
+
         <div class="search-text-container d-flex flex-row justify-content-end">
             <img class="filter-icon" src="images/filter.svg" alt="filter">
             <a href="#adv-search-collapse" data-toggle="collapse" class="adv-big-search-text">Tìm kiếm nâng cao</a>
@@ -18,87 +19,61 @@
         <div class="collapse" id="adv-search-collapse">
             <div class="row search-option-container">
                 <div class="col d-flex justify-content-center">
-                    <form class="search-option-item1 d-flex flex-column">
-                        <div class="form-group">
-                            <label class="textbox-header" for="author-name">Tên tác giả</label>
-                            <input id="author-name" type="text" class="form-control" placeholder="Nhập tên tác giả..">
-                        </div>
+                        <form id="advanceForm" class="search-option-item1 d-flex flex-column">
+                            <div class="form-group">
+                                <label class="textbox-header" for="author-name">Tên tác giả</label>
+                                <input id="author-name" name="author" type="text" class="form-control" placeholder="Nhập tên tác giả..">
+                            </div>
 
-                        <div class="form-group">
-                            <label class="textbox-header">Tình trạng</label>
-                            <br>
-                            <select name="state">
-                                <option value="Available">Có thể mượn</option>
-                                <option value="Unavailable">Không thể mượn</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label class="textbox-header">Tình trạng</label>
+                                <br>
+                                <select name="availability">
+                                    <option value="" selected >Tất cả tình trạng</option>
+                                    <option value="available">Có thể mượn</option>
+                                    <option value="unavailable">Không thể mượn</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group">
-                            <label class="textbox-header">Ngôn ngữ</label>
-                            <br>
-                            <select name="language">
-                                <option value="Vietnamese">Tiếng Việt</option>
-                                <option value="English">Tiếng Anh</option>
-                            </select>
-                        </div>
-                    </form>
+                            <div class="form-group">
+                                <label class="textbox-header">Ngôn ngữ</label>
+                                <br>
+                                <select name="language">
+                                    <option value="" selected>Tất cả ngôn ngữ</option>
+                                    <option value="vi">Tiếng Việt</option>
+                                    <option value="en">Tiếng Anh</option>
+                                </select>
+                            </div>
+                        </form>
                 </div>
 
                 <div class="vertical-line"></div>
 
                 <div class="col d-flex justify-content-around">
-                    <div class="row d-flex align-self-stretch">
-                        <div class="col d-flex flex-column align-self-center">
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">Thể loại 1</label>
+                        <div class="d-flex flex-wrap flex-column align-items-baseline">
+                            <div class="mt-4">
+                                <input type="radio" name="type" value="" checked> Tất cả
                             </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                <label class="form-check-label" for="inlineCheckbox2">Thể loại 2</label>
+                            <div class="mt-4">
+                                <input type="radio" name="type" value="1"> Lập trình
                             </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-                                <label class="form-check-label" for="inlineCheckbox3">Thể loại 3</label>
+                            <div class="mt-4">
+                                <input type="radio" name="type" value="2"> Tâm lí - Kĩ năng sống
                             </div>
-                        </div>
-
-                        <div class="col d-flex flex-column align-self-center">
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-                                <label class="form-check-label" for="inlineCheckbox4">Thể loại 4</label>
+                            <div class="mt-4">
+                                <input type="radio" name="type" value="3"> Khoa học - Kĩ thuật
                             </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-                                <label class="form-check-label" for="inlineCheckbox5">Thể loại 5</label>
+                            <div class="mt-4">
+                                <input type="radio" name="type" value="4"> Hồi ký - Tuỳ bút
                             </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-                                <label class="form-check-label" for="inlineCheckbox6">Thể loại 6</label>
-                            </div>
-                        </div>
-
-                        <div class="col d-flex flex-column align-self-center">
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-                                <label class="form-check-label" for="inlineCheckbox7">Thể loại 7</label>
-                            </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
-                                <label class="form-check-label" for="inlineCheckbox8">Thể loại 8</label>
-                            </div>
-                            <div class="form-check form-check-inline option-checkbox-items">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox9" value="option9">
-                                <label class="form-check-label" for="inlineCheckbox9">Thể loại 9</label>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
             </div>
+            <div class="d-flex justify-content-center">
+                <button id="advanceBtn" class="btn btn-primary" style="width: 100px;">Click me</button>
+            </div>
         </div>
     </div>
-</div>
 <hr>
 <div class="filter">
             <div class="btn-group d-flex justify-content-center" role="group" aria-label="Button group with nested dropdown">
@@ -113,7 +88,7 @@
 
                 <div class="ml-3">
                     <select id="availability" onchange="selectParam('availability',this.value)">
-                        <option value="" selected disabled hidden>Tình trạng</option>
+                        <option value="" selected >Tất cả tình trạng</option>
                         <option value="available">Có thể mượn</option>
                         <option value="unavailable">Không thể mượn</option>
                     </select>
@@ -131,13 +106,11 @@
 
                 <div class="ml-3">
                     <select id="language" onchange="selectParam('language',this.value)">
-                        <option value="" selected hidden disabled>Ngôn ngữ</option>
+                        <option value="" selected>Tất cả ngôn ngữ</option>
                         <option value="vi">Tiếng Việt</option>
                         <option value="en">Tiếng Anh</option>
                     </select>
                 </div>
-                
-                <button type="button" class="btn-primary ml-3" style="border-radius: 5px;" onclick="resetFilter()">Reset Filter</button>
             </div>
         </div>
 
@@ -147,8 +120,9 @@
         <img class="img_book" src="{{imgPath}}">
         <div class="d-flex flex-column align-content-between">    
             <div class="d-flex flex-column" style="height: 160px">
-                <h5 class="header_font">{{title}}</h5>
+                <h6 class="header_font">{{title}}</h6>
                 <p class="author_name">{{author}}</p>
+                <p class="author_name">Version {{version}}</p>
                 <p>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</p>
             </div>
             
@@ -176,23 +150,31 @@
             var password = $("#pwd").val();
 
             if (username == "user" && password == "user") {
-                window.location.href = "./search-user.html";
+                window.location.href = "/";
             } else {
                 alert("Wrong username or password. Please try again.");
             }
         });
 
-        //var prevURL = window.location.search;
-        //if (prevURL == "?collapseTrigger") {
-        //    $('#adv-search-collapse').show();
-        //    $('#adv-search-collapse').on('show.bs.collapse', function () {
-        //        $('#adv-search-collapse').hide();
-        //        window.location.search = "";
-        //    });
-        //    $('#adv-search-collapse').on('hide.bs.collapse', function () {
-        //        $('#adv-search-collapse').show();
-        //    });
-        //}
+        $("#submitFormsBtn").on("click", function () {
+            var authorName = $("#author-name").val();
+            var selectedType = $("input[name='type']:checked").val();
+            var selectedAvailability = $("select[name='availability'] option:selected").val();
+            var selectedLanguage = $("select[name='language'] option:selected").val();
+            var searchVal = $("input[name='search']").val();
+
+            urlParams.set('search', searchVal);
+            urlParams.set('author', authorName);
+            urlParams.set('type', selectedType);
+            urlParams.set('availability', selectedAvailability);
+            urlParams.set('language', selectedLanguage);
+            let url = '/search?' + urlParams.toString();
+            location.href = url;
+
+
+            console.log("Clicked");
+            console.log(searchVal + " " + sauthorName + " " + selectedType + " " +selectedAvailability + " " +selectedLanguage);
+        })
 
         $("#pagination li").addClass('page-item');
         $("#pagination li a").addClass('page-link');
@@ -219,7 +201,8 @@
         availability : '',
         type : '',
         sort : 'title',
-        search : ''
+        search : '',
+        author : ''
     }   
 
     for (let key in params) {
@@ -237,5 +220,7 @@
     function resetFilter() {
         location.href = '/search';
     }
+
+   
 </script>
 

@@ -14,6 +14,9 @@ module.exports = {
       author: {
         type: Sequelize.STRING
       },
+      version: {
+        type: Sequelize.STRING
+      },
       availability: {
         type: Sequelize.STRING
       },

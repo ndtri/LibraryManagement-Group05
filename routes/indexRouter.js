@@ -2,6 +2,14 @@ let express = require('express');
 let router = express.Router();
 
 router.get('/', (req, res) => {
+    let newsController = require('../controllers/newsController');
+    newsController
+    .getNewNews()
+    .then(data => {
+        res.locals.newNews = data;
+    })
+    .catch(error => next(error));
+
     let bookController = require('../controllers/bookController');
     bookController
     .getHotBook()
@@ -13,19 +21,29 @@ router.get('/', (req, res) => {
         res.locals.newBooks = data;
         res.render('index');
     })
-    .catch(error => next(error));
-});
-
-router.get('/news', (req, res) => {
-    res.render('news');
+    .catch(error => next(error));  
 });
 
 router.get('/support', (req, res) => {
-    res.render('support');
+    let newsController = require('../controllers/newsController');
+    newsController
+    .getNewNews()
+    .then(data => {
+        res.locals.newNews = data;
+        res.render('support');
+    })
+    .catch(error => next(error));
 });
 
 router.get('/intro', (req, res) => {
-    res.render('intro');
+    let newsController = require('../controllers/newsController');
+    newsController
+    .getNewNews()
+    .then(data => {
+        res.locals.newNews = data;
+        res.render('intro');
+    })
+    .catch(error => next(error));
 });
 
 module.exports = router;

@@ -45,6 +45,7 @@ app.set('view engine', 'hbs');
 
 app.use('/', require('./routes/indexRouter'));
 app.use('/search', require('./routes/searchRouter'));
+app.use('/news', require('./routes/newsRouter'));
 
 app.get('/sync', (req, res) => {
     let models = require('./models');
