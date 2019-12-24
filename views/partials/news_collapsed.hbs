@@ -1,23 +1,12 @@
 <div class="col-3 news_container">
     <h3 class="header_font header_news">Thông báo</h3>
     <div class="d-flex flex-column news_border">
+        {{#each newNews}}
         <div class="news">
-            <h5 class="header_font">Tên tin tức</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a class="read_more" href="#">Xem thêm</a>
+            <h5 class="header_font">{{title}}</h5>
+            <p>{{content}}</p>
             <hr>
         </div>
-        <div class="news">
-            <h5 class="header_font">Tên tin tức</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a class="read_more" href="#">Xem thêm</a>
-            <hr>
-        </div>
-        <div class="news">
-            <h5 class="header_font">Tên tin tức</h5>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-            <a class="read_more" href="#">Xem thêm</a>
-            <hr>
-        </div>
+        {{/each}}
     </div>
 </div>

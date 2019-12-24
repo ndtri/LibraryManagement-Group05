@@ -20,6 +20,10 @@ router.get('/', (req, res, next) => {
         req.query.search = '';
     }
 
+    if (req.query.author == null || req.query.author.trim() == '') {
+        req.query.author = '';
+    }
+
     if(req.query.type == null || isNaN(req.query.type))
     {
         req.query.type = '';
@@ -42,6 +46,14 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res) => {
+    let newsController = require('../controllers/newsController');
+    newsController
+    .getNewNews()
+    .then(data => {
+        res.locals.newNews = data;
+    })
+    .catch(error => next(error));
+
     let bookController = require('../controllers/bookController');
     bookController
     .getById(req.params.id)
