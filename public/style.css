@@ -50,8 +50,11 @@ p {
 }
 
 .header_btn {
+    width: 110px;
     margin-top: 30px;
+    color: white !important;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 #signoutBtn, .profile-btn {
@@ -241,11 +244,6 @@ p {
     margin-bottom: 10px;
 }
 
-.header_btn {
-    margin-top: 30px;
-    margin-bottom: 10px;
-}
-
 #signoutBtn, .profile-btn {
     max-width: 50%;
     margin-left: 5rem;
@@ -282,7 +280,7 @@ p {
     background-color: white;
     border-radius: 15px;
     border: 1px solid red;
-    margin-right: 70px !important;
+    margin: 0 70px !important;
 }
 
 .big-search-textbox {
@@ -346,7 +344,7 @@ p {
 }
 
 .search-item-container {
-    margin-left: 120px;
+    margin-left: 70px;
     margin-top: 60px;
 }
 
@@ -363,5 +361,5 @@ select {
     width: 200px;
     border: 1px solid #007bff;
     border-radius: 5px;
-    visibility: collapse;
+    /* visibility: collapse; */
 }

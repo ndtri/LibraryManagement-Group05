@@ -33,7 +33,7 @@ router.post('/send', (req, res) => {
         });
 
         let mailOptions = {
-          from: '"Độc giả thư viện 👻" <nhokbm113@gmail.com>', // sender address
+          from: '"Đọc giả thư viện 👻" <nhokbm113@gmail.com>', // sender address
           to: "nhokbm13@gmail.com", // list of receivers
           subject: "Góp ý", // Subject line
           text: "", // plain text body
