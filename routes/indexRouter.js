@@ -24,17 +24,6 @@ router.get('/', (req, res) => {
     .catch(error => next(error));  
 });
 
-router.get('/support', (req, res) => {
-    let newsController = require('../controllers/newsController');
-    newsController
-    .getNewNews()
-    .then(data => {
-        res.locals.newNews = data;
-        res.render('support');
-    })
-    .catch(error => next(error));
-});
-
 router.get('/intro', (req, res) => {
     let newsController = require('../controllers/newsController');
     newsController

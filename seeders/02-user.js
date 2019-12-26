@@ -3,7 +3,10 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     let data = [
-      {username : "1753020", password : "user", isAdmin : "false" }
+      {username : "1753020",
+      password : "user",
+      email : "test@gmail.com",
+      isAdmin : "false" }
     ];
     data.map(item => {
       item.createdAt = Sequelize.literal('NOW()');

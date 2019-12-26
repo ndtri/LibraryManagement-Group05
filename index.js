@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let expressHbs = require('express-handlebars');
 let paginateHelper = require('express-handlebars-paginate');
+const bodyParse = require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -43,9 +44,15 @@ let hbs = expressHbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+//Body Parser Middleware
+app.use(bodyParse.urlencoded({ extended: false }));
+app.use(bodyParse.json());
+
 app.use('/', require('./routes/indexRouter'));
 app.use('/search', require('./routes/searchRouter'));
 app.use('/news', require('./routes/newsRouter'));
+app.use('/support', require('./routes/supportRouter'));
+
 
 app.get('/sync', (req, res) => {
     let models = require('./models');
