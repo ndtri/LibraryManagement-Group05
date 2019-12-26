@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 let expressHbs = require('express-handlebars');
 let paginateHelper = require('express-handlebars-paginate');
-const bodyParse = require('body-parser');
+let bodyParse = require('body-parser');
 
 app.use(express.static(__dirname + '/public'));
 
@@ -48,10 +48,30 @@ app.set('view engine', 'hbs');
 app.use(bodyParse.urlencoded({ extended: false }));
 app.use(bodyParse.json());
 
+//Cookie Parser
+let cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
+//Session
+let session = require('express-session');
+app.use(session({
+    cookie: { httpOnly: true, maxAge: null },
+    secret: 'S3cret',
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use((req, res, next) => {
+    res.locals.username = req.session.user ? req.session.user.username : '';
+    res.locals.isLoggedIn = req.session.user ? true : false;
+    next();
+});
+
 app.use('/', require('./routes/indexRouter'));
 app.use('/search', require('./routes/searchRouter'));
 app.use('/news', require('./routes/newsRouter'));
 app.use('/support', require('./routes/supportRouter'));
+app.use('/users', require('./routes/userRouter'));
 
 
 app.get('/sync', (req, res) => {

@@ -9,12 +9,24 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="login-btn d-flex flex-row justify-content-center">
-                    <button type="button" class="btn btn-primary header_btn mr-2 mt-5" data-toggle="modal"
-                        data-target="#loginModal">Đăng nhập</button>
+            <div class="col-3 d-flex align-items-end">
+               {{#if isLoggedIn}}
+               <div class="account-btn d-flex flex-column m-t-20 d-flex">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i style="margin-right:7px " class="fa fa-user"></i> {{username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/">Quản lý tài khoản</a>
+                        <a class="dropdown-item" href="/">Lịch sử mượn sách</a>
+                        <a class="log-out-btn dropdown-item" href="/users/logout">Đăng xuất</a>
+                    </div>
+                </div>
+                {{else}}
+                <div class="login-btn">
+                    <a role="button" href="/users/login" class="btn btn-primary header_btn mr-2">Đăng nhập</a>
                     <!-- Modal -->
-                    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLable"
+                    {{!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginLable"
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -48,11 +60,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
-                    <button type="button" class="btn btn-primary header_btn mt-5" data-toggle="modal"
-                        data-target="#signupModal">Đăng kí</button>
-                    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupLable"
+                     <a role="button" href="/users/register" class="btn btn-primary header_btn">Đăng kí</a>
+                    {{!-- <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupLable"
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -108,19 +119,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="account-btn d-flex flex-column">
-                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i style="margin-right:7px " class="fa fa-user"></i> 1753020
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="/">Quản lý tài khoản</a>
-                        <a class="dropdown-item" href="/">Lịch sử mượn sách</a>
-                        <a class="log-out-btn dropdown-item" href="/">Đăng xuất</a>
-                    </div>
-                </div>
+                    </div> --}}
+                </div> 
+                
+                {{/if}}
             </div>
         </div>
     </div>
@@ -170,8 +172,6 @@
         </div> --}}
     </div>
 </div>
-
-<script src="/js/login.js"></script>
 
 <script>
         var pathname = window.location.pathname.split('?')[0];
