@@ -363,3 +363,26 @@ select {
     border-radius: 5px;
     /* visibility: collapse; */
 }
+
+.username{
+    margin-right: 20px;
+}
+.userinfo{
+    margin-left: 20px;
+    font-family: "Calistoga";
+}
+.gmail{
+    font-family: "Asap";
+    color:#007bff;
+    font-style: italic;
+    
+}
+
+.header_font {
+    font-family: "Calistoga";
+    margin-bottom: 20px;
+}
+.inputnewname
+{
+    border-radius: 5px;
+}
