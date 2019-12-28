@@ -1,9 +1,10 @@
 <title>Profile</title>
 <div class="d-flex flex-row">
     <img src="/images/avataruser.png" alt="avataruser" height="150px" width="150px">
+    {{#with user}}
     <div class="userinfo">
         <div class="d-flex flex-columm d-flex align-items-center">
-            <h1 class="username"> Nguyễn Hữu Tuấn</h1>
+            <h1 class="username"> {{username}}</h1>
             <a data-target="#myModal" data-toggle="modal" href="#myModal">Chỉnh sửa</a>
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
@@ -26,8 +27,9 @@
                 </div>
             </div>
         </div>
-        <h5 class="gmail">Huutuan345679@gmail.com</h5>
+        <h5 class="gmail">{{email}}</h5>
     </div>
+    {{/with}}
 </div>
 
 <hr>

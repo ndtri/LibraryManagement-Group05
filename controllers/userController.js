@@ -5,7 +5,13 @@ let bcrypt = require('bcryptjs');
 
 controller.getUserByEmail = (email) => {
     return User.findOne({
-        where: {email: email}
+        where: {email : email}
+    });
+};
+
+controller.getUserByUsername = (username) => {
+    return User.findOne({
+        where: {username : username}
     });
 };
 
