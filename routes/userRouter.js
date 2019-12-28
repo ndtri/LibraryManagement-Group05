@@ -10,8 +10,8 @@ router.post('/login', (req, res, next) => {
     let email = req.body.email;
     let password = req.body.password;
     let keepLoggedIn = (req.body.keepLoggedIn != undefined);
-    console.log("Req val: " + req.body.keepLoggedIn);
-    console.log(keepLoggedIn);
+    // console.log("Req val: " + req.body.keepLoggedIn);
+    // console.log(keepLoggedIn);
 
     userController
         .getUserByEmail(email)
@@ -101,6 +101,17 @@ router.get('/logout', (req, res, next) => {
         } 
         return res.redirect('/users/login');
     });
+});
+
+router.get('/profile/:username', (req, res) => {
+    let userController = require('../controllers/userController');
+    userController
+    .getUserByUsername(req.params.username)
+    .then(user => {
+        res.locals.user = user;
+        res.render('profile');
+    })
+    .catch(error => next(error));
 });
 
 module.exports = router;
