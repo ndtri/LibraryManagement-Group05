@@ -108,7 +108,7 @@ router.get('/profile/:username', (req, res) => {
     userController
     .getUserByUsername(req.params.username)
     .then(user => {
-        res.locals.user = user;
+        res.locals.user = req.session.user;
         res.render('profile');
     })
     .catch(error => next(error));
