@@ -1,4 +1,5 @@
 let express = require('express');
+// let bodyParse = require('body-parser');
 let router = express.Router();
 let userController = require('../controllers/userController');
 
@@ -103,6 +104,8 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
+
+
 router.get('/profile/:username', (req, res) => {
     let userController = require('../controllers/userController');
     userController
@@ -112,6 +115,15 @@ router.get('/profile/:username', (req, res) => {
         res.render('profile');
     })
     .catch(error => next(error));
+});
+
+// router.use(bodyParse.urlencoded({ extended: false }));
+// router.use(bodyParse.json());
+
+router.post('/profile/:username', (req, res) => {
+    //let username = req.body.newUsername;
+    console.log(req.body.username);
+    //res.render('profile');
 });
 
 module.exports = router;
