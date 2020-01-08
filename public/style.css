@@ -23,7 +23,7 @@
 }
 
 .bookinfo {
-    height: 600px;
+	height: 600px;
 }
 
 .Details {
@@ -50,16 +50,17 @@ p {
 }
 
 .header_btn {
-    width: 110px;
-    margin-top: 30px;
-    color: white !important;
-    margin-bottom: 10px;
-    cursor: pointer;
+	width: 110px;
+	margin-top: 30px;
+	color: white !important;
+	margin-bottom: 10px;
+	cursor: pointer;
 }
 
-#signoutBtn, .profile-btn {
-    max-width: 50%;
-    margin-left: 5rem;
+#signoutBtn,
+.profile-btn {
+	max-width: 50%;
+	margin-left: 5rem;
 }
 
 .nav {
@@ -164,35 +165,36 @@ p {
 }
 
 .banner img {
-   width: 1350px;
-   height: 300px;
-   margin-top: 30px;
+	width: 1350px;
+	height: 300px;
+	margin-top: 30px;
 }
 
 .content_container {
-    margin: 50px;
+	margin: 50px;
 }
 
-.header_book, .header_news {
-    margin-bottom: 20px;
+.header_book,
+.header_news {
+	margin-bottom: 20px;
 }
 
 .author_name {
-    font-family: "Merriweather";
-    font-weight: bold;
-    font-size: 13px;
-    margin-bottom: 5px;
+	font-family: "Merriweather";
+	font-weight: bold;
+	font-size: 13px;
+	margin-bottom: 5px;
 }
 
 .img_book {
-    max-width: 130px;
-    max-height: 250px;
-    margin-right: 20px;
+	max-width: 130px;
+	max-height: 250px;
+	margin-right: 20px;
 }
 
 .book_item {
-    margin-bottom: 30px;
-    width: 400px;
+	margin-bottom: 30px;
+	width: 400px;
 }
 
 .cmtarea {
@@ -210,8 +212,8 @@ p {
 	resize: none;
 	height: 30px;
 	width: 800px;
-    border-radius: 5px;
-    padding-left: 5px;
+	border-radius: 5px;
+	padding-left: 5px;
 }
 
 .area {
@@ -223,166 +225,216 @@ p {
 }
 
 .header_font {
-    font-family: "Calistoga";
+	font-family: "Calistoga";
 }
 
 p {
-    font-family: "Asap";
+	font-family: "Asap";
 }
 
 .container-fluid {
-    padding: 20px 50px !important;
+	padding: 20px 50px !important;
 }
 
 .header {
-    margin-right: 70px;
+	margin-right: 70px;
 }
 
 .logo_img {
-    border-radius: 5px;
-    margin-right: 20px;
-    margin-bottom: 10px;
+	border-radius: 5px;
+	margin-right: 20px;
+	margin-bottom: 10px;
 }
 
-#signoutBtn, .profile-btn {
-    max-width: 50%;
-    margin-left: 5rem;
+#signoutBtn,
+.profile-btn {
+	max-width: 50%;
+	margin-left: 5rem;
 }
 
 .nav {
-    border: 1px solid gray;
-    border-radius: 5px;
+	border: 1px solid gray;
+	border-radius: 5px;
 }
 
 .nav-link {
-    color: black !important;
-    padding: 5px 20px !important;
+	color: black !important;
+	padding: 5px 20px !important;
 }
 
 .search_box {
-    width: 250px;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid red;
-    font-size: 18px;
+	width: 250px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid red;
+	font-size: 18px;
 }
 
 .search-textbox {
-    border: none;
-    border-color: transparent;
-    height: 34px;
-    width: 190px;
-    margin-left: 5px;
+	border: none;
+	border-color: transparent;
+	height: 34px;
+	width: 190px;
+	margin-left: 5px;
 }
 
 .big-search-box {
-    width: 1050px;
-    background-color: white;
-    border-radius: 15px;
-    border: 1px solid red;
-    margin: 0 70px !important;
+	width: 1050px;
+	background-color: white;
+	border-radius: 15px;
+	border: 1px solid red;
+	margin: 0 70px !important;
 }
 
 .big-search-textbox {
-    border: none;
-    border-color: transparent;
-    height: 34px;
-    width: 990px;
-    margin-left: 10px;
+	border: none;
+	border-color: transparent;
+	height: 34px;
+	width: 990px;
+	margin-left: 10px;
 }
 
-.search-textbox:focus, .big-search-textbox:focus {
-    outline-width: 0;
+.search-textbox:focus,
+.big-search-textbox:focus {
+	outline-width: 0;
 }
 
 .search-header {
-    margin-left: 200px;
-    font-weight: bolder;
+	margin-left: 200px;
+	font-weight: bolder;
 }
 
 .search-text-container {
-    margin-top: 15px;
-    margin-right: 250px;
+	margin-top: 15px;
+	margin-right: 250px;
 }
 
 .adv-big-search-text {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 .filter-icon {
-    max-width: 22px;
-    max-height: 22px;
+	max-width: 22px;
+	max-height: 22px;
 }
 
 .collapse {
-    border: 1px solid lightgrey;
-    border-radius: 10px;
+	border: 1px solid lightgrey;
+	border-radius: 10px;
 }
 
 .search-option-container {
-    margin-top: 50px;
-    margin-bottom: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
 .vertical-line {
-    width: 1px;
-    background-color: lightgrey;
-  }
+	width: 1px;
+	background-color: lightgrey;
+}
 
 .option-checkbox-items {
-      margin: 20px 0;
-  }
+	margin: 20px 0;
+}
 
 .textbox-header {
-    font-family: "Merriweather";
-    font-weight: bold;
-    font-size: 16px;
+	font-family: "Merriweather";
+	font-weight: bold;
+	font-size: 16px;
 }
 
 .form-control {
-    width: 250px !important;
+	width: 250px !important;
 }
 
 .search-item-container {
-    margin-left: 70px;
-    margin-top: 60px;
+	margin-left: 70px;
+	margin-top: 60px;
 }
 
 select {
-    border-radius: 5px;
-    height: 40px;
-    border: 1px solid #007bff;
-    color: #007bff;
-    padding-left: 10px;
-    padding-right: 5px  ;
+	border-radius: 5px;
+	height: 40px;
+	border: 1px solid #007bff;
+	color: #007bff;
+	padding-left: 10px;
+	padding-right: 5px;
 }
 
 .account-btn {
-    width: 200px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    /* visibility: collapse; */
+	width: 200px;
+	border: 1px solid #007bff;
+	border-radius: 5px;
+	/* visibility: collapse; */
 }
 
-.username{
-    margin-right: 20px;
+.username {
+	margin-right: 20px;
 }
-.userinfo{
-    margin-left: 20px;
-    font-family: "Calistoga";
+.userinfo {
+	margin-left: 20px;
+	font-family: "Calistoga";
 }
-.gmail{
-    font-family: "Asap";
-    color:#007bff;
-    font-style: italic;
-    
+.gmail {
+	font-family: "Asap";
+	color: #007bff;
+	font-style: italic;
 }
 
 .header_font {
-    font-family: "Calistoga";
-    margin-bottom: 20px;
+	font-family: "Calistoga";
+	margin-bottom: 20px;
 }
-.inputnewname
-{
-    border-radius: 5px;
+.inputnewname {
+	border-radius: 5px;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	border: 1px solid #ddd;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 16px;
+	font-family: "Asap";
+}
+
+tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.trashicon {
+	margin-right: 20px;
+}
+
+.adminsearch {
+	width: 250px;
+	background-color: white;
+	border-radius: 10px;
+	border: 1px solid red;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.search_btn {
+	float: right;
+}
+
+.adminsearchtextbox {
+	border: none;
+	border-color: transparent;
+	height: 34px;
+	width: 190px;
+	margin-left: 5px;
+}
+.upload {
+	margin: 5px 15px 0px 15px;
+}
+
+.add {
+	margin-top: 5px;
 }
