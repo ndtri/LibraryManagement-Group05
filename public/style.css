@@ -295,7 +295,8 @@ p {
 }
 
 .search-textbox:focus,
-.big-search-textbox:focus {
+.big-search-textbox:focus,
+.adminsearchtextbox:focus {
 	outline-width: 0;
 }
 

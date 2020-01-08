@@ -28,14 +28,15 @@
 </div>  --}}
 <hr>
 <div>
-    <h2 class="header_font">Quản lý sách</h2>
+    <h2 class="header_font" style="padding-left: 15px;">Quản lý sách</h2>
     <div class="d-flex col">
         <div class="adminsearch">
-            <input class="adminsearchtextbox" type="text" name="search" placeholder="Tên sách, tên tác giả"></input>
+            <input class="adminsearchtextbox" type="text" name="search" placeholder="Tên sách"></input>
             <button id="submitFormsBtn" class="btn btn-link search_btn" type="button">
                 <img src="images/search_button.png" alt="search_button">
             </button>
         </div>
+        <button type="button" class="btn-primary ml-3" style="border-radius: 5px; height: 40px" onclick="resetFilter()">Reset Filter</button>
         <i class="fa fa-upload fa-2x upload"></i>
         <i class="fa fa-plus fa-2x add"></i>
     </div>
@@ -48,15 +49,61 @@
             <th width="120">Ngôn ngữ</th>
             <th width="110">Chỉnh sửa</th>
         </tr>
+        {{#each adminBooks}}
         <tr>
-            <td>Qua môn web</td>
-            <td>Tuấn and his friend</td>
-            <td>Một câu chuyện về 2 thằng đang cố gắng qua được môn web</td>
-            <td>1</td>
-            <td>Tiếng việt</td>
+            <td>{{title}}</td>
+            <td>{{author}}</td>
+            <td>{{content}}</td>
+            <td>{{quantity}}</td>
+            <td>{{#ifCond language "===" "vi"}}Tiếng Việt{{else}}Tiếng Anh{{/ifCond}}</td>
             <td><i class="fa fa-trash trashicon"></i><i class="fa fa-edit"></i></td>
         </tr>
+        {{/each}}
     </table>
+</div>
 
+    <nav class="d-flex justify-content-center" aria-label="..." id="pagination">
+        {{{ createPagination pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
     </nav>
 </div>
+
+<script>
+    $(document).ready(function () {
+         $("#submitFormsBtn").on("click", function () {
+            var searchVal = $("input[name='search']").val();
+
+            urlParams.set('search', searchVal);
+            let url = '/admin-home?' + urlParams.toString();
+            location.href = url;
+
+        })
+
+        $("#pagination li").addClass('page-item');
+        $("#pagination li a").addClass('page-link');
+        let savePage = urlParams.get('page');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = '/admin-home?' + urlParams.toString();
+            $(item).attr('href', href);
+        })
+        urlParams.set('page', savePage);
+    });
+
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+        page : 1,
+        search : '',
+        limit: 6
+    }   
+
+    for (let key in params) {
+        if (!urlParams.has(key)) {
+            urlParams.append(key, params[key]);
+        }
+    }
+
+     function resetFilter() {
+        location.href = '/admin-home';
+    }
+</script>
