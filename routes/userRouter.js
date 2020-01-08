@@ -1,5 +1,5 @@
 let express = require('express');
-// let bodyParse = require('body-parser');
+let models = require('../models');
 let router = express.Router();
 let userController = require('../controllers/userController');
 
@@ -104,8 +104,6 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
-
-
 router.get('/profile/:username', (req, res) => {
     let userController = require('../controllers/userController');
     userController
@@ -117,13 +115,38 @@ router.get('/profile/:username', (req, res) => {
     .catch(error => next(error));
 });
 
-// router.use(bodyParse.urlencoded({ extended: false }));
-// router.use(bodyParse.json());
-
 router.post('/profile/:username', (req, res) => {
-    //let username = req.body.newUsername;
-    console.log(req.body.username);
-    //res.render('profile');
+    let userController = require('../controllers/userController');
+    userController
+        .getUserByUsername(req.body.username)
+        .then(user => {
+            if (user) {
+                console.log("Username exist!");
+                return res.redirect('/users/profile/' + req.session.user.username);
+            } else {
+                models.User
+                .update({
+                    username: req.body.username
+                }, {
+                    where: { username: req.session.user.username }
+                })
+                .then(function() {
+                    userController
+                    .getUserByUsername(req.body.username)
+                    .then(user => {
+                        req.session.user = user;
+                        console.log(req.session.user.username);
+                        res.locals.user = req.session.user;
+                        res.redirect('/');
+                    })
+                    .catch(error => next(error));
+                })
+                .catch(function(error) {
+                    res.json(error);
+                    console.log("update profile failed!");
+                });
+            }
+        })
 });
 
 module.exports = router;

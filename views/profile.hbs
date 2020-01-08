@@ -1,4 +1,30 @@
-<title>Profile</title>
+<head>
+    <title>Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="/util.css">
+    <link rel="stylesheet" type="text/css" href="/main.css">
+    <!--===============================================================================================-->
+</head>
 <div class="d-flex flex-row">
     <img src="/images/avataruser.png" alt="avataruser" height="150px" width="150px">
     {{#with user}}
@@ -8,23 +34,28 @@
             <a data-target="#myModal" data-toggle="modal" href="#myModal">Chỉnh sửa</a>
             <div id="myModal" class="modal fade" role="dialog">
                 <div class="modal-dialog">
-            
                     <!-- Modal content-->
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Thay đổi tên tài khoản</h4>
+                                <h4 class="modal-title login100-form-title">Thay đổi tên tài khoản</h4>
                                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                             </div>
-                            <form action="/users/profile/{{username}}" method="POST">
+                            <form action="/users/profile/{{username}}" method="POST" id="updateProfileForm">
                                 <div class="modal-body">
-                                    Tên tài khoản mới:<br>
-                                    <input class="inputnewname" type="text" name="username"><br>
+                                    <h5>Tên tài khoản mới:</h5><br>
+
+                                    <div class="wrap-input100 validate-input" data-validate="Tên tài khoản bắt buộc">
+                                        <input class="input100" type="text" name="username" placeholder="New Username">
+                                        <span class="focus-input100"></span>
+                                    </div><br>
                                 </div>
-                            
-                            <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary" data-dismiss="modal">Lưu
-                            </div>
-                            </form>
+                                <div class="modal-footer">
+                                    <button type="button" id="updateProfileBtn" class="btn btn-primary">
+                                            Lưu
+                                    </button>
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                                </div>
+                             </form>
                         </div>
                 </div>     
             </div>
@@ -87,3 +118,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('#updateProfileBtn').on('click', function() {
+            var input = $("input[name=username]").val();
+            if (input === "") {
+                alert("Field must not be empty");
+                return;
+            } else {
+                $('#updateProfileForm').submit();
+            }
+        });
+    });
+</script>
