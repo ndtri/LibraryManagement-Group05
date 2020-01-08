@@ -63,6 +63,7 @@ app.use(session({
 
 app.use((req, res, next) => {
     res.locals.username = req.session.user ? req.session.user.username : '';
+    res.locals.isAdmin = req.session.user ? req.session.user.isAdmin : null;
     res.locals.isLoggedIn = req.session.user ? true : false;
     next();
 });
@@ -72,6 +73,7 @@ app.use('/search', require('./routes/searchRouter'));
 app.use('/news', require('./routes/newsRouter'));
 app.use('/support', require('./routes/supportRouter'));
 app.use('/users', require('./routes/userRouter'));
+app.use('/admin-home', require('./routes/adminRouter'));
 
 
 app.get('/sync', (req, res) => {
