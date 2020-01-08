@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+</style>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/public/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Calistoga" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Asap" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid"></body>
+
+<div class="header">
+    <div class="header_logo">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-row">
+                    <a href="/">
+                        <img class="logo_img" src="/public/images/logo-khtn-full.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-3 d-flex align-items-end">
+                <div class="account-btn d-flex flex-column m-t-20 d-flex">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <i style="margin-right:7px " class="fa fa-user"></i> Nguyen Huu Tuan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <a class="dropdown-item" href="/users/profile/{{username}}">Quản lý tài khoản</a>
+                        <a class="log-out-btn dropdown-item" href="/users/logout">Đăng xuất</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr>
+<h2 class="header_font">Thêm sách</h2>
+<form>
+    <div class="form-group">
+        <label for="Bookname">Nhập tên sách</label>
+        <input type="text" class="form-control " id="Bookname" placeholder="Tên sách">
+    </div>
+
+    <div class="form-group">
+        <label for="Authorname">Nhập tên tác giả</label>
+        <input type="text" class="form-control " id="Authorname" placeholder="Tên tác giả">
+    </div>
+
+    <div class="form-group">
+        <label for="Booktype">Nhập thể loại</label>
+        <input type="text" class="form-control " id="Booktype" placeholder="Thể loại">
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="Bookconttent">Mô tả sách</label>
+        <textarea class="form-control " id="Bookconttent" rows="3" placeholder="Mô tả"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Bookcover">Bìa sách</label>
+        <div onclick="myFunction()">
+        <i class="fa fa-upload fa-2x" id="upload"></i>
+        </div>
+    </div>
+</form>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+<script>
+
+    $('#upload').on('click', function () {
+            $('#file-input').trigger('click');
+        });
+</script>
+
+</html>
