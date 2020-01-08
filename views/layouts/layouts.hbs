@@ -18,7 +18,10 @@
 
 <body>
     <div class="container-fluid">
+        {{#if isAdmin}}
+        {{else}}
         {{>navbar}}
+        {{/if}}
         <hr>
         {{{body}}}
         {{>footer}}
