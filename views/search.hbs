@@ -143,17 +143,6 @@
 <script>
     $(document).ready(function () {
 
-        $("#loginBtn").click(function () {
-            var username = $("#uname").val();
-            var password = $("#pwd").val();
-
-            if (username == "user" && password == "user") {
-                window.location.href = "/";
-            } else {
-                alert("Wrong username or password. Please try again.");
-            }
-        });
-
         $("#submitFormsBtn").on("click", function () {
             var authorName = $("#author-name").val();
             var selectedType = $("input[name='type']:checked").val();
