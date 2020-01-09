@@ -432,9 +432,20 @@ tr:nth-child(even) {
 	margin-left: 5px;
 }
 .upload {
-	margin: 5px 15px 0px 15px;
+	margin-bottom: 15px !important;
 }
 
 .add {
-	margin-top: 5px;
+	margin-bottom: 15px !important;
 }
+
+.deletebook {
+	margin-right: 10px;
+}
+.request {
+	margin-left: 10px;
+}
+
+.accept{
+        margin-right: 10px;
+    }

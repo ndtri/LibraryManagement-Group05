@@ -21,6 +21,8 @@
                         <a class="log-out-btn dropdown-item" href="/users/logout">Đăng xuất</a>
                     </div>
                 </div>
+                <button data-toggle="modal" data-target="#confirmdelete" class="request"><i
+                        class="fa fa-bell fa-2x"></i></button>
             </div>
 
         </div>
@@ -36,8 +38,8 @@
                 <img src="images/search_button.png" alt="search_button">
             </button>
         </div>
-        <i class="fa fa-upload fa-2x upload"></i>
-        <i class="fa fa-plus fa-2x add"></i>
+        <button class="upload"><i class="fa fa-upload fa-2x"></i></button>
+        <button class="add"><i class="fa fa-plus fa-2x"></i></button>
     </div>
     <table>
         <tr>
@@ -54,7 +56,33 @@
             <td>Một câu chuyện về 2 thằng đang cố gắng qua được môn web</td>
             <td>1</td>
             <td>Tiếng việt</td>
-            <td><i class="fa fa-trash trashicon"></i><i class="fa fa-edit"></i></td>
+            <td><button data-toggle="modal" data-target="#confirmdelete" class="deletebook"><i
+                        class="fa fa-trash"></i></button><button class="editbook"><i class="fa fa-edit"></i></button>
+            </td>
+            <div class="modal" id="confirmdelete">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Xóa sách</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            Bạn có chắc chắn muốn xóa cuốn sách này
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn" data-dismiss="modal">Không</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Có</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </tr>
     </table>
 
