@@ -1,0 +1,44 @@
+<title>Request</title>
+<table>
+    <tr>
+        <th>Tên người mượn</th>
+        <th>Tên sách</th>
+
+        <th>Ngày mượn</th>
+        <th>Email</th>
+        <th>Xử lý</th>
+    </tr>
+    <tr>
+        <td>Nguyên Huu Tuan</td>
+        <td>Nhap mon lap trinh</td>
+        <td>11/09/1999</td>
+        <td>Huutuan345679@gmail.com</td>
+        <td><button class="accept"><i class="fa fa-check"></i></button><button class="denied"><i
+                    class="fa fa-ban"></i></button>
+        </td>
+        <div class="modal" id="confirmdelete">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Xóa sách</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa cuốn sách này
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn" data-dismiss="modal">Không</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Có</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </tr>
+</table>
