@@ -16,9 +16,11 @@
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i style="margin-right:7px " class="fa fa-user"></i> {{username}}
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-menu" style="width: 198px" aria-labelledby="dropdownMenuLink">
                         <a class="dropdown-item" href="/users/profile/{{username}}">Quản lý tài khoản</a>
-                        <a class="dropdown-item" href="/">Lịch sử mượn sách</a>
+                        {{#if isAdmin}}
+                            <a class="log-out-btn dropdown-item" href="/admin-home/Request">Quản lí yêu cầu</a>
+                        {{/if}}
                         <a class="log-out-btn dropdown-item" href="/users/logout">Đăng xuất</a>
                     </div>
                 </div>

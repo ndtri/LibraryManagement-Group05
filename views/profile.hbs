@@ -53,7 +53,7 @@
                                     <button type="button" id="updateProfileBtn" class="btn btn-primary">
                                             Lưu
                                     </button>
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng
                                 </div>
                              </form>
                         </div>
@@ -72,27 +72,24 @@
         Sách đang mượn
     </h3>
     <div class="d-flex flex-column">
+    {{#each request}}
         <div class="d-flex flex-row book_item">
-            <img class="img_book" src="/images/book.jpg">
+            <img class="img_book" src="{{Book.imgPath}}">
             <div class="d-flex flex-column align-content-between">
                 <div class="d-flex flex-column" style="height: 160px">
-                    <h5 class="header_font">Sách gì đó</h5>
-                    <p class="author_name">Nguyễn Hữu Tuấn</p>
-                    <p>Tiếng Việt</p>
-                </div>
-    
-                <div class="d-flex flex-column">
-                    <span>
-                        <button type="button" class="btn btn-primary">Mượn sách</button>
-                    </span>
-                    <a class="read_more">Xem thêm</a>
+                    <h5 class="header_font">{{Book.title}}</h5>
+                    <p class="author_name">{{Book.author}}</p>
+                    <p>Trạng thái: {{status}}</p>
+                    <p>Ngày mượn: {{pendingDate}}</p>
                 </div>
             </div>
         </div>
+    {{/each}}
     </div>
 </div>
 
-<hr>
+
+{{!-- <hr>
 
 <div>
     <h3 <h3 class="header_font">
@@ -117,7 +114,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 <script>
     $(document).ready(function () {
