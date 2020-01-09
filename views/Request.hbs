@@ -3,20 +3,82 @@
     <tr>
         <th>Tên người mượn</th>
         <th>Tên sách</th>
-
+        <th>ID sách</th>
         <th>Ngày mượn</th>
+        <th>Trạng thái</th>
         <th>Email</th>
         <th>Xử lý</th>
     </tr>
+    {{#each request}}
     <tr>
-        <td>Nguyên Huu Tuan</td>
-        <td>Nhap mon lap trinh</td>
-        <td>11/09/1999</td>
-        <td>Huutuan345679@gmail.com</td>
-        <td><button class="accept"><i class="fa fa-check"></i></button><button class="denied"><i
-                    class="fa fa-ban"></i></button>
+        <td>{{User.username}}</td>
+        <td>{{Book.title}}</td>
+        <td>{{Book.id}}</td>
+        <td>{{pendingDate}}</td>
+        <td>{{#ifCond status "===" "Waiting"}}Chờ duyệt{{else}}Đang mượn{{/ifCond}}</td>
+        <td>{{User.email}}</td>
+        <td><button data-target="#updateModal" data-toggle="modal" href="#updateModal" class="accept"><i class="fa fa-check"></i></button>
+            <button data-target="#deleteModal" data-toggle="modal" href="#deleteModal" class="denied"><i class="fa></i fa-ban"></i></button>
         </td>
-        <div class="modal" id="confirmdelete">
+        <div class="d-flex flex-columm d-flex align-items-center">
+                    <div id="updateModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title login100-form-title">Cập nhật trạng thái</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <form action="/admin-home/Request/update" method="POST" id="updateStateForm">
+                                        <div class="modal-body">
+                                            <h5>Chuyển trạng thái thành: "Đang mượn"</h5><br>
+                                            <h6>ID sách: </h6>
+                                            <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
+                                                <input class="input100" type="number" name="bookId" placeholder="ID sách">
+                                                <span class="focus-input100"></span>
+                                            </div><br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="updateStateBtn" class="btn btn-primary">
+                                                    Cập nhật
+                                            </button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>     
+                    </div>
+                </div>
+        <div class="d-flex flex-columm d-flex align-items-center">
+                    <div id="deleteModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+                            <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title login100-form-title">Xoá yêu cầu</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <form action="/admin-home/Request/delete" method="POST" id="deleteReqForm">
+                                        <div class="modal-body">
+                                            <h5>Xoá một yêu cầu</h5><br>
+                                            <h6>ID sách: </h6>
+                                            <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
+                                                <input class="input100" type="number" name="delBookId" placeholder="ID sách">
+                                                <span class="focus-input100"></span>
+                                            </div><br>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" id="deleteReqBtn" class="btn btn-primary">
+                                                    Xoá
+                                            </button>
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Đóng
+                                        </div>
+                                    </form>
+                                </div>
+                        </div>     
+                    </div>
+                </div>
+        {{!-- <div class="modal" id="confirmdelete">
             <div class="modal-dialog">
                 <div class="modal-content">
 
@@ -39,6 +101,61 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
     </tr>
+    {{/each}}
 </table>
+<nav class="d-flex justify-content-center" aria-label="..." id="pagination">
+        {{{ createPagination pagination leftText="Prev" rightText="Next" paginationClass="pagination"}}}
+    </nav>
+
+<script>
+    $(document).ready(function () {
+        $("#pagination li").addClass('page-item');
+        $("#pagination li a").addClass('page-link');
+        let savePage = urlParams.get('page');
+        $("#pagination li a").each((index,item)=>{
+            let page = $(item).attr('href').split('=')[1];
+            urlParams.set('page', page);
+            let href = '/admin-home/Request?' + urlParams.toString();
+            $(item).attr('href', href);
+        })
+        urlParams.set('page', savePage);
+
+        $('#updateStateBtn').on('click', function() {
+            var input = $("input[name=bookId]").val();
+            if (input === "") {
+                alert("Field must not be empty");
+                return;
+            } else if (input <= 0) {
+                alert("Invalid Input");
+            } else {
+                $('#updateStateForm').submit();
+            }
+        });
+
+        $('#deleteReqBtn').on('click', function() {
+            var input = $("input[name=delBookId]").val();
+            if (input === "") {
+                alert("Field must not be empty");
+                return;
+            } else if (input <= 0) {
+                alert("Invalid Input");
+            } else {
+                $('#deleteReqForm').submit();
+            }
+        });
+    });
+
+    let urlParams = new URLSearchParams(location.search);
+    let params = {
+        page : 1,
+        limit: 6
+    }   
+
+    for (let key in params) {
+        if (!urlParams.has(key)) {
+            urlParams.append(key, params[key]);
+        }
+    }
+</script>

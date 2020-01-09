@@ -106,13 +106,20 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/profile/:username', (req, res) => {
     let userController = require('../controllers/userController');
+    let requestController = require('../controllers/requestController');
     userController
     .getUserByUsername(req.params.username)
     .then(user => {
+        //console.log(user);
         res.locals.user = req.session.user;
+        return requestController
+        .getPendingRequestByUserId(user.id)
+    })
+    .then(data => {
+        res.locals.request = data;
         res.render('profile');
     })
-    .catch(error => next(error));
+    .catch(error => next(error));   
 });
 
 router.post('/profile/:username', (req, res) => {
@@ -135,7 +142,7 @@ router.post('/profile/:username', (req, res) => {
                     .getUserByUsername(req.body.username)
                     .then(user => {
                         req.session.user = user;
-                        console.log(req.session.user.username);
+                        //console.log(req.session.user.username);
                         res.locals.user = req.session.user;
                         res.redirect('/');
                     })
@@ -147,6 +154,7 @@ router.post('/profile/:username', (req, res) => {
                 });
             }
         })
+        .catch(error => next(error));
 });
 
 module.exports = router;

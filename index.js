@@ -62,6 +62,7 @@ app.use(session({
 }));
 
 app.use((req, res, next) => {
+    res.locals.id = req.session.user ? req.session.user.id : null;
     res.locals.username = req.session.user ? req.session.user.username : '';
     res.locals.isAdmin = req.session.user ? req.session.user.isAdmin : null;
     res.locals.isLoggedIn = req.session.user ? true : false;
