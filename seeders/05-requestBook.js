@@ -4,10 +4,10 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let data = [
       {
-        username : "1753020",
-        email : "test@gmail.com",
-        password : "$2a$10$8SdDT5.npWUnNmNA0yr62eGiQgu/2R9Bqu.YrKcrXkGll/DpUolJ6",
-        isAdmin : "false"
+        status : "Waiting",
+        pendingDate : "15/10/2020",
+        userId : 1,
+        bookId : 1
       }
     ];
     data.map(item => {
@@ -15,10 +15,10 @@ module.exports = {
       item.updatedAt = Sequelize.literal('NOW()');
       return item;
     });
-    return queryInterface.bulkInsert('Users', data, {});
+    return queryInterface.bulkInsert('RequestBooks', data, {});
   },
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete('Users', null, {});
+    return queryInterface.bulkDelete('RequestBooks', null, {});
   }
 };
