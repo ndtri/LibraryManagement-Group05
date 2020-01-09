@@ -1,15 +1,18 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Comments', {
+    return queryInterface.createTable('RequestBooks', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      message: {
-        type: Sequelize.TEXT
+      pendingDate: {
+        type: Sequelize.STRING
+      },
+      status: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -19,15 +22,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE
       },
-      typeId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Types',
-          key: 'id'
-        },
-        onDelete: 'cascade',
-        onUpdate: 'cascade'
-      },
       userId: {
         type: Sequelize.INTEGER,
         references: {
@@ -36,10 +30,19 @@ module.exports = {
         },
         onDelete: 'cascade',
         onUpdate: 'cascade'
+      },
+      bookId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Books',
+          key: 'id'
+        },
+        onDelete: 'cascade',
+        onUpdate: 'cascade'
       }
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Comments');
+    return queryInterface.dropTable('RequestBooks');
   }
 };
