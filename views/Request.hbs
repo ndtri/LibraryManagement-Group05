@@ -1,9 +1,10 @@
 <title>Request</title>
 <table>
     <tr>
+        <th>Id người mượn</th>
         <th>Tên người mượn</th>
-        <th>Tên sách</th>
         <th>ID sách</th>
+        <th>Tên sách</th>
         <th>Ngày mượn</th>
         <th>Trạng thái</th>
         <th>Email</th>
@@ -11,9 +12,10 @@
     </tr>
     {{#each request}}
     <tr>
+        <td>{{User.id}}</td>
         <td>{{User.username}}</td>
-        <td>{{Book.title}}</td>
         <td>{{Book.id}}</td>
+        <td>{{Book.title}}</td>
         <td>{{pendingDate}}</td>
         <td>{{#ifCond status "===" "Waiting"}}Chờ duyệt{{else}}Đang mượn{{/ifCond}}</td>
         <td>{{User.email}}</td>
@@ -36,7 +38,13 @@
                                             <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
                                                 <input class="input100" type="number" name="bookId" placeholder="ID sách">
                                                 <span class="focus-input100"></span>
-                                            </div><br>
+                                            </div><br> 
+
+                                            <h6>ID người mượn: </h6>
+                                            <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
+                                                <input class="input100" type="number" name="userIdUpdate" placeholder="ID người mượn">
+                                                <span class="focus-input100"></span>
+                                            </div><br>                                 
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" id="updateStateBtn" class="btn btn-primary">
@@ -64,6 +72,12 @@
                                             <h6>ID sách: </h6>
                                             <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
                                                 <input class="input100" type="number" name="delBookId" placeholder="ID sách">
+                                                <span class="focus-input100"></span>
+                                            </div><br>
+
+                                            <h6>ID người mượn: </h6>
+                                            <div class="wrap-input100 validate-input" data-validate="Id bắt buộc">
+                                                <input class="input100" type="number" name="userId" placeholder="ID người mượn">
                                                 <span class="focus-input100"></span>
                                             </div><br>
                                         </div>

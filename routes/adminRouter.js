@@ -71,7 +71,7 @@ router.post('/Request/update', (req, res) => {
                 .update({
                     status: "Pending"
                 }, {
-                    where: { bookId : req.body.bookId }
+                    where: { bookId : req.body.bookId, userId : req.body.userIdUpdate }
                 })
                 .then(function() {
                     requestController
@@ -101,7 +101,7 @@ router.post('/Request/delete', (req, res) => {
                 models.RequestBook
                 .destroy(
                 {
-                    where: { bookId : req.body.delBookId }
+                    where: { bookId : req.body.delBookId, userId : req.body.userId }
                 })
                 .then(function() {
                     requestController
